@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Free! 岩美2026｜自分用ガイド</title>
+<style>
+:root{--blue:#0b4f6c;--light:#eef7fa;--text:#17202a;--muted:#66727d;--green:#16804a;--orange:#b96b00;--red:#b42318;--line:#dfe7eb}
+*{box-sizing:border-box}body{margin:0;background:#f4f7f8;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Yu Gothic",sans-serif}
+header{background:linear-gradient(135deg,#0b4f6c,#0e718d);color:#fff;padding:18px 16px 16px;position:sticky;top:0;z-index:40;box-shadow:0 2px 10px #0002}
+.wrap{max-width:760px;margin:auto}.title{font-size:22px;font-weight:900}.sub{font-size:12px;opacity:.86;margin-top:4px}.clock{font-size:38px;font-weight:900;letter-spacing:.03em;margin-top:13px}.date{font-size:12px;opacity:.9}
+nav{display:flex;gap:6px;overflow:auto;padding:9px 10px;background:#fff;border-bottom:1px solid var(--line);z-index:30}
+nav button{white-space:nowrap;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 13px;font-weight:800;color:#44515a}nav button.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+main{max-width:760px;margin:auto;padding:12px}.panel{display:none}.panel.active{display:block}
+.card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:14px;margin:10px 0;box-shadow:0 1px 4px #0000000b}
+h2{font-size:18px;margin:8px 2px 10px}.section{font-size:13px;font-weight:900;margin:18px 3px 7px;color:#33434e}
+.badge{display:inline-block;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:900;background:#edf1f3;color:#46535b}.live{background:#e4f7ed;color:var(--green)}.soon{background:#fff2dc;color:var(--orange)}.ended{background:#e8eaec;color:#6d747a}
+.event{position:relative}.event.ended{filter:grayscale(.9);opacity:.58;background:#eef0f1}.event.ended:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0,transparent 8px,#ffffff55 8px,#ffffff55 10px);border-radius:15px;pointer-events:none}
+.row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.name{font-weight:900;font-size:16px}.time{font-weight:900;font-size:15px;color:var(--blue)}.place{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.5}.note{font-size:12px;color:#52616b;line-height:1.55;margin-top:9px}.count{font-size:12px;font-weight:900;margin-top:8px}
+a{color:var(--blue)}.btns{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.btn{display:inline-block;text-decoration:none;background:var(--light);border:1px solid #cde4ed;border-radius:9px;padding:8px 10px;font-size:12px;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.grid .card{margin:0}.check{display:flex;gap:9px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #edf0f2}.check:last-child{border:0}.check input{width:20px;height:20px;margin-top:1px}.done{text-decoration:line-through;color:#89939a}
+.cafe .status{font-size:12px;font-weight:900}.stock{display:inline-block;border-radius:7px;padding:3px 6px;font-size:10px;font-weight:900;background:#eef1f2;margin-left:5px}.unknown{background:#fff3cd;color:#7a5b00}.available{background:#e4f7ed;color:#176b42}.sold{background:#fbe9e7;color:#a62a20}
+.source{font-size:11px;color:#6d7880;line-height:1.5}.small{font-size:11px;color:#707b83}.warning{background:#fff8e8;border:1px solid #f0d79b;border-radius:12px;padding:10px;font-size:11px;line-height:1.5}
+footer{padding:20px 14px 40px;color:#7a858d;font-size:10px;line-height:1.6}
+.sns-stock-item{border-top:1px solid #edf0f2;padding:10px 0}.sns-stock-item:first-child{border-top:0}.sns-stock-head{display:flex;justify-content:space-between;gap:8px;align-items:center}.sns-stock-status{font-size:11px;font-weight:900;border-radius:999px;padding:4px 8px}.sns-stock-status.available{background:#e4f7ed;color:#176b42}.sns-stock-status.sold{background:#fbe9e7;color:#a62a20}.sns-stock-status.unknown{background:#fff3cd;color:#7a5b00}.sns-stock-status.info{background:#eef1f2;color:#46535b}.sns-stock-source{font-size:10px;color:#707b83;margin-top:5px;line-height:1.45}.sns-stock-text{font-size:12px;line-height:1.55;margin-top:5px}.sns-stock-meta{font-size:10px;color:#8a949b;margin-top:4px}.sns-stock-link{font-size:11px;font-weight:800}
+@media(min-width:700px){nav{top:104px}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.shuttle-map-wrap .shop-marker text{paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round}.shuttle-map-wrap .shop-marker{cursor:pointer}.shuttle-map-wrap .cafe-focus circle{stroke-width:6px;filter:drop-shadow(0 2px 5px #0004)}
+
+.fes-gourmet-hub{border:2px solid #e6c7a8;background:#fffaf5}.fes-gourmet-hub .place{font-weight:800;margin-top:6px}.fes-yatai-details{margin-top:10px;border-top:1px solid #eadfd6;padding-top:9px}.fes-yatai-details summary{cursor:pointer;font-weight:900;color:#7b4d2b}.fes-yatai-list{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:9px}.fes-yatai-list span{background:#fff;border:1px solid #eadfd6;border-radius:8px;padding:7px 8px;font-size:12px}.fes-yatai-list span:nth-child(2n){background:#fffdfb}@media(max-width:480px){.fes-yatai-list{grid-template-columns:1fr}}
+.gourmet-fes-card{border:2px solid #e6c7a8;background:#fffaf5}.gourmet-fes-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.gourmet-fes-card .detail-open-btn{width:100%;margin-top:10px}.stamp-box{background:#fff;border:1px solid #eadfd6;border-radius:11px;padding:10px;margin-top:10px}.stamp-box b{color:#7b4d2b}.gourmet-yatai-list{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}.gourmet-yatai-list div{background:#fff;border:1px solid #eadfd6;border-radius:8px;padding:7px 8px;font-size:12px}.gourmet-modal{position:fixed;inset:0;background:#f4f7f8;z-index:2100;display:none;overflow:auto}.gourmet-modal.open{display:block}.gourmet-modal-head{position:sticky;top:0;z-index:2;background:#fff;border-bottom:1px solid var(--line);padding:10px 12px;display:flex;align-items:center;gap:8px}.gourmet-modal-head .back{border:0;background:var(--light);border:1px solid #cde4ed;border-radius:9px;padding:8px 11px;font-weight:900;color:var(--blue)}.gourmet-modal-body{max-width:760px;margin:auto;padding:12px 12px 36px}.gourmet-section{font-size:13px;font-weight:900;margin:16px 2px 7px;color:#33434e}.gourmet-note{background:#fff8e8;border:1px solid #efdca7;border-radius:12px;padding:10px;font-size:12px;line-height:1.55}.gourmet-shop{background:#fff;border:1px solid #eadfd6;border-radius:10px;padding:9px;font-size:12px;font-weight:800}.gourmet-shop small{display:block;font-weight:500;color:#66727d;margin-top:3px}@media(max-width:480px){.gourmet-yatai-list{grid-template-columns:1fr}}
+
+.inventory-card{background:#fff;border:1px solid #d9e4e8;border-radius:12px;padding:12px;margin:10px 0}.inventory-head{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}.inventory-name{font-weight:900;font-size:15px}.inventory-goods{margin-top:7px;font-size:12px;color:#4e5b63;line-height:1.55}.inventory-links{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}.inventory-links a{display:inline-block;padding:7px 9px;border:1px solid #cbdfe7;border-radius:9px;background:#f7fbfd;color:#17647a;text-decoration:none;font-weight:800;font-size:12px}.inventory-note{background:#fff8e8;border:1px solid #eedda9;border-radius:10px;padding:10px;font-size:12px;line-height:1.55;margin-bottom:12px}.inventory-status{font-size:11px;font-weight:900;padding:4px 7px;border-radius:999px;background:#eef3f5;color:#52616a;white-space:nowrap}
+</style>
+
+<style>
+.inv-fresh{font-weight:700}
+.inv-fresh.fresh{color:#16803c}
+.inv-fresh.stale{color:#a66a00}
+.inv-fresh.unknown{color:#666}
+</style>
+
+<style id="fixed-header-css">
+#fixedHeader{
+ position:sticky; top:0; z-index:1000; background:#fff;
+ box-shadow:0 2px 10px rgba(0,0,0,.12);
+}
+#clockBar{margin:0;padding:10px 12px 7px;text-align:center;background:#fff}
+#clock{font-size:32px;font-weight:900;line-height:1.1;letter-spacing:.03em;color:var(--text)}
+#fixedHeader nav{position:static!important;top:auto!important;z-index:auto!important}
+#fixedHeader + .wrap + main{
+ scroll-margin-top:100px;
+}
+</style>
+
+<style id="novelty-images-v1">
+.novelty-images{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 12px}
+.novelty-images a{display:block;text-decoration:none;color:inherit;text-align:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:7px;overflow:hidden}
+.novelty-images img{display:block;width:100%;height:auto;max-height:260px;object-fit:contain;border-radius:8px}
+.novelty-images span{display:block;font-size:.8rem;font-weight:800;margin-top:5px}
+.novelty-source{font-size:.72rem;color:#6b7280;line-height:1.5;margin-top:8px}
+.novelty-source a{color:var(--blue);text-decoration:underline}
+@media(max-width:520px){.novelty-images{grid-template-columns:1fr 1fr;gap:7px}.novelty-images img{max-height:220px}}
+</style>
+<style id="cafe-ui-v11">.cafe-card{border-radius:12px;padding:14px;margin:10px 0;border:1px solid rgba(0,0,0,.08)}.cafe-card.yatai{background:#fff4ec}.cafe-card.shop{background:#eef7ff}.cafe-label{display:inline-flex;align-items:center;gap:5px;font-weight:700;font-size:.88rem;padding:4px 8px;border-radius:999px;margin-bottom:8px}.cafe-label.yatai{background:#ffe3d0}.cafe-label.shop{background:#dcefff}.cafe-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}.cafe-tag{font-size:.84rem;padding:4px 7px;border-radius:7px;background:rgba(255,255,255,.72)}.inv-dot{display:inline-block;width:10px;height:10px;border-radius:50%;vertical-align:middle;margin-right:5px}.inv-green{background:#249447}.inv-yellow{background:#d39a00}.inv-red{background:#c83d3d}.inv-gray{background:#999}.cafe-meta{font-size:.82rem;line-height:1.6;margin-top:8px}</style><style id="map-btn-v17">.map-btn{display:inline-flex;align-items:center;gap:5px;margin-top:10px;padding:7px 10px;border-radius:8px;text-decoration:none;font-weight:700;background:rgba(255,255,255,.92);border:1px solid rgba(0,0,0,.12);color:inherit}</style><style id="train-ui-v22">
+.train-section{margin-top:14px}.train-legend{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}.train-key{font-size:.82rem;padding:4px 8px;border-radius:999px;border:1px solid rgba(0,0,0,.1)}
+.train-key.reg{background:#f4f4f4}.train-key.extra{background:#fff0c7;border-color:#e0b84f}.train-key.special{background:#e7f2ff;border-color:#79a9d8}
+.train-card{display:flex;align-items:center;gap:12px;padding:11px 12px;margin:7px 0;border-radius:10px;border:1px solid rgba(0,0,0,.09);background:#fff}.train-card.extra{background:#fff8df;border-color:#e0b84f}.train-card .train-time{font-size:1.18rem;font-weight:800;min-width:58px}.train-card .train-main{flex:1}.train-card .train-type{font-weight:700}.train-card .train-note{font-size:.8rem;margin-top:3px;opacity:.78}.train-card .train-badge{font-size:.75rem;font-weight:700;padding:4px 7px;border-radius:999px;background:#eee;white-space:nowrap}.train-card.extra .train-badge{background:#f0cf70}.train-subnote{font-size:.78rem;line-height:1.55;margin-top:8px}
+</style>
+<style id="cafe-detail-v24">
+.cafe-detail-modal{position:fixed;inset:0;background:#f4f7f8;z-index:2000;display:none;overflow:auto}
+.cafe-detail-modal.open{display:block}
+.cafe-detail-head{position:sticky;top:0;z-index:2;background:#fff;border-bottom:1px solid var(--line);padding:10px 12px;display:flex;align-items:center;gap:8px}
+.cafe-detail-head .back{border:0;background:var(--light);border:1px solid #cde4ed;border-radius:9px;padding:8px 11px;font-weight:900;color:var(--blue)}
+.cafe-detail-body{max-width:760px;margin:auto;padding:12px 12px 36px}
+.cafe-detail-image{display:block;width:auto;max-width:100%;height:auto;max-height:520px;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:14px;margin:8px auto 12px}
+.cafe-image-gallery{display:flex;flex-direction:column;align-items:center;gap:12px;margin:8px 0 10px}
+.cafe-image-gallery .cafe-detail-image{width:auto;max-width:100%;height:auto;max-height:520px;margin:0;object-fit:contain}
+.cafe-x-embed{width:100%;max-width:550px;margin:0 auto 8px}
+.cafe-x-embed .twitter-tweet{margin:0 auto !important}
+.image-credit{font-size:11px;color:#65727a;line-height:1.55;margin:4px 0 14px;padding:8px 10px;background:#fff;border:1px solid var(--line);border-radius:10px}
+.image-credit a{color:var(--blue);font-weight:800;text-decoration:none}
+.cafe-detail-note{background:#fff8e8;border:1px solid #efdca7;border-radius:12px;padding:10px;font-size:12px;line-height:1.55;margin:10px 0}
+.menu-item{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;margin:8px 0}
+.menu-item .price{font-weight:900;color:var(--blue);white-space:nowrap}
+.menu-item .menu-title{font-weight:900;font-size:15px}
+.detail-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+.detail-btn{display:inline-block;text-decoration:none;background:var(--light);border:1px solid #cde4ed;border-radius:9px;padding:8px 10px;font-size:12px;font-weight:800;color:var(--blue)}
+
+.image-credit{font-size:.82rem;color:#667085;margin:-.25rem 0 1rem;padding:.55rem .7rem;border-radius:10px;background:#f6f7f9;line-height:1.55}
+.image-credit a{font-weight:700;text-decoration:underline}
+.detail-source{font-size:10px;color:#748089;line-height:1.5;margin-top:16px}
+.detail-open-btn{display:inline-flex;align-items:center;justify-content:center;margin-top:9px;width:100%;padding:9px 10px;border-radius:9px;border:1px solid #b9d9e5;background:#fff;color:var(--blue);font-weight:900}
+</style>
+<style id="shuttle-hub-v1">
+.shuttle-intro{background:#eef7fa}.shuttle-filter{cursor:pointer}.shuttle-filter.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.shuttle-map-wrap{background:#fff;border:1px solid var(--line);border-radius:16px;padding:6px;overflow:hidden;box-shadow:0 1px 4px #0000000b}
+#shuttleMap{display:block;width:100%;height:auto}
+#shuttleMap .map-stop,#shuttleMap .map-marker{cursor:pointer}
+#shuttleMap .map-stop:hover,#shuttleMap .map-marker:hover{filter:drop-shadow(0 2px 4px #0003)}
+.shuttle-detail-card{min-height:82px}.route-card{border-left:7px solid var(--blue)}.route-blue{border-left-color:#1683b7}.route-red{border-left-color:#d34b43}.route-green{border-left-color:#2b9b62}
+.goods-card{border-left:7px solid #8a5a00}.goods-card .goods-items{margin:8px 0 0 18px;padding:0}.goods-card li{margin:4px 0;font-size:12px;line-height:1.45}.goods-focus{margin:10px 0;padding:10px 12px;border-radius:10px;background:#fff0cf;border:1px solid #e2bb67;font-weight:900;font-size:12px}.goods-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0}.goods-product{background:#fff;border:1px solid var(--line);border-radius:10px;padding:7px}.goods-product img{display:block;width:100%;height:145px;object-fit:contain;border-radius:7px}.goods-product-name{font-size:11px;font-weight:800;line-height:1.35;margin-top:5px}.goods-price{font-size:11px;color:var(--blue);font-weight:900;margin-top:2px}.cafe-focus{outline:3px solid #f0a500;box-shadow:0 0 0 5px #fff0c7}@media(max-width:520px){.goods-gallery{grid-template-columns:1fr 1fr}.goods-product img{height:125px}}
+.shuttle-mini-btn{margin-top:8px}
+@media(max-width:520px){.shuttle-map-wrap{padding:2px}#shuttleMap{min-width:680px}.shuttle-map-wrap{overflow-x:auto}.shuttle-intro .btns{gap:5px}.shuttle-intro .btn{padding:7px 8px}}
+</style>
+<style id="shuttle-ui-v20">
+.shuttle-simple-note{border-left:6px solid #1683b7;background:#f8fbfd}.shuttle-map-wrap{background:#fff}.shuttle-map-wrap svg{display:block;width:100%;height:auto}.shuttle-map-wrap .map-stop{pointer-events:none}.shuttle-map-wrap .map-marker{pointer-events:auto;cursor:pointer}.shuttle-map-wrap .cafe-map-marker{cursor:pointer}.shuttle-map-wrap text{paint-order:stroke;stroke:#f7fafb;stroke-width:3px;stroke-linejoin:round}.shuttle-map-wrap .map-stop text{stroke-width:4px}.shuttle-map-wrap .map-marker text{stroke-width:3px}
+#shuttleCafeList .cafe-card{margin:10px 0}.detail-open-btn{margin-top:10px}
+.cafe-map-marker{cursor:pointer}.cafe-map-marker:hover{filter:drop-shadow(0 2px 5px #0004)}
+.cafe-map-guide{background:#fffaf5;border-color:#f0d7c5}.cafe-map-guide .name{color:#9a4f22}
+.cafe-hub-modal{position:fixed;inset:0;background:#f4f7f8;z-index:1900;display:none;overflow:auto}.cafe-hub-modal.open{display:block}.cafe-hub-head{position:sticky;top:0;z-index:2;background:#fff;border-bottom:1px solid var(--line);padding:10px 12px;display:flex;align-items:center;gap:8px}.cafe-hub-head button{border:0;background:var(--light);border:1px solid #cde4ed;border-radius:9px;padding:8px 11px;font-weight:900;color:var(--blue)}.cafe-hub-body{max-width:760px;margin:auto;padding:12px 12px 36px}.cafe-hub-body .cafe-card{margin:10px 0}.cafe-hub-body .cafe-card .detail-open-btn{width:100%}
+</style>
+</head>
+<body>
+<div id="fixedHeader">
+<div id="clockBar"><div class="clock" id="clock">--:--</div></div>
+<nav id="nav">
+<button class="active" data-tab="timeline">タイムライン</button>
+<button data-tab="shuttle">🚌 シャトルバスMAP</button>
+<button data-tab="train">列車情報</button>
+<button data-tab="inventory">🎁 コラボカフェ在庫チェック</button>
+</nav>
+</div>
+
+<section id="shuttle" class="panel">
+<h2>🚌 シャトルバスMAP</h2>
+<div class="card shuttle-intro">
+  <div class="name">ここを起点に岩美を回る</div>
+  <div class="note"><b>🟦 浦富・田後　🟩 総合運動場　🟥 FDK・きなんせ</b><br>地図は「どちらへ向かうバスか」を見るためのもの。下の各情報から目的地の詳細を開けます。</div>
+</div>
+<div class="shuttle-map-wrap">
+<svg id="shuttleMap" viewBox="0 0 760 540" role="img" aria-label="Free!×岩美町2026 岩美町イベント簡易マップ">
+  <!-- 岩美町の大まかな位置関係を示す簡易マップ。実際の道路形状ではなく、町内の位置関係を優先。 -->
+  <rect x="0" y="0" width="760" height="540" rx="18" fill="#f7fafb"/>
+  <path d="M0 0H760V92 C710 105 675 88 628 103 C575 120 545 100 500 112 C450 126 420 108 375 124 C320 143 275 126 225 145 C165 168 105 160 0 190Z" fill="#e4f3f6"/>
+  <path d="M0 190 C105 160 165 168 225 145 C275 126 320 143 375 124 C420 108 450 126 500 112 C545 100 575 120 628 103 C675 88 710 105 760 92" fill="none" stroke="#9ac8d2" stroke-width="3"/>
+  <text x="34" y="38" font-size="22" font-weight="900" fill="#33434e">岩美イベントMAP</text>
+  <text x="34" y="62" font-size="12" fill="#66727d">岩美町内のおおまかな位置関係。☕をタップするとコラボ店詳細が開きます。</text>
+  <text x="690" y="55" text-anchor="middle" font-size="12" fill="#7aa7b0" font-weight="800">日本海</text>
+
+  <!-- 主要道路・町の軸 -->
+  <path d="M562 308 C535 282 520 245 500 205 C485 176 470 155 455 140" fill="none" stroke="#d7dee2" stroke-width="12" stroke-linecap="round"/>
+  <path d="M562 308 C535 330 500 350 463 362 C425 378 390 395 350 425" fill="none" stroke="#d7dee2" stroke-width="11" stroke-linecap="round"/>
+  <path d="M562 308 C590 315 615 325 637 335" fill="none" stroke="#d7dee2" stroke-width="10" stroke-linecap="round"/>
+  <path d="M562 308 C520 300 485 295 450 288 C410 280 360 278 310 282 C250 286 190 283 131 283" fill="none" stroke="#e3e8eb" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- シャトルバス：ブルー＝浦富・田後方面 -->
+  <path d="M562 308 C535 282 520 245 490 168 C450 165 395 165 342 165 C375 165 405 165 422 165 C470 220 520 270 562 308" fill="none" stroke="#1683b7" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- レッド＝FDK・きなんせ方面 -->
+  <path d="M562 308 C590 330 590 390 555 420 C525 442 490 400 463 362 C500 345 535 326 562 308" fill="none" stroke="#d34b43" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- グリーン＝岩美駅から総合運動場へ直行 -->
+  <path d="M562 308 C590 315 615 325 637 335" fill="none" stroke="#2b9b62" stroke-width="8" stroke-linecap="round"/>
+
+  <g font-size="12" font-weight="900">
+    <rect x="375" y="112" width="108" height="24" rx="12" fill="#e8f5fa" stroke="#1683b7" stroke-width="2"/><text x="429" y="129" text-anchor="middle" fill="#12678e">田後線</text>
+    <rect x="395" y="452" width="120" height="24" rx="12" fill="#fff0ef" stroke="#d34b43" stroke-width="2"/><text x="455" y="469" text-anchor="middle" fill="#a83a35">道の駅線</text>
+    <rect x="650" y="382" width="125" height="24" rx="12" fill="#eaf7ef" stroke="#2b9b62" stroke-width="2"/><text x="712" y="399" text-anchor="middle" fill="#217447">THANKS FES線</text>
+  </g>
+
+  <!-- 主要地点 -->
+  <g class="map-stop">
+    <circle cx="562" cy="308" r="17" fill="#fff" stroke="#17202a" stroke-width="3"/>
+    <text x="562" y="314" text-anchor="middle" font-size="14">🚉</text>
+    <text x="562" y="335" text-anchor="middle" font-size="13" font-weight="900">岩美駅</text>
+  </g>
+  <g class="map-stop"><circle cx="490" cy="168" r="9" fill="#fff" stroke="#1683b7" stroke-width="3"/><text x="490" y="150" text-anchor="middle" font-size="11" font-weight="800">浦富海岸P</text></g>
+  <g class="map-stop"><circle cx="342" cy="165" r="9" fill="#fff" stroke="#1683b7" stroke-width="3"/><text x="342" y="147" text-anchor="middle" font-size="11" font-weight="800">田後港</text></g>
+  <g class="map-stop"><circle cx="422" cy="165" r="9" fill="#fff" stroke="#1683b7" stroke-width="3"/><text x="422" y="147" text-anchor="middle" font-size="11" font-weight="800">荒砂神社</text></g>
+  <g class="map-stop"><circle cx="555" cy="420" r="9" fill="#fff" stroke="#d34b43" stroke-width="3"/><text x="555" y="440" text-anchor="middle" font-size="11" font-weight="800">FDK駐車場</text></g>
+  <g class="map-stop"><circle cx="463" cy="362" r="9" fill="#fff" stroke="#d34b43" stroke-width="3"/><text x="463" y="384" text-anchor="middle" font-size="11" font-weight="800">きなんせ岩美</text></g>
+  <g class="map-stop"><circle cx="637" cy="335" r="9" fill="#fff" stroke="#2b9b62" stroke-width="3"/><text x="637" y="357" text-anchor="middle" font-size="11" font-weight="800">総合運動場</text></g>
+  <g class="map-stop"><circle cx="528" cy="292" r="7" fill="#fff" stroke="#8a5a00" stroke-width="2"/><text x="565" y="276" text-anchor="start" font-size="10" font-weight="800">岩美町役場</text></g>
+
+  <!-- グリーティング -->
+  <g class="map-marker greet" data-map-target="iwatobi">
+    <circle cx="342" cy="190" r="15" fill="#fff" stroke="#1683b7" stroke-width="3"/><text x="342" y="196" text-anchor="middle" font-size="15">🐧</text>
+    <text x="342" y="216" text-anchor="middle" font-size="10" font-weight="900">イワトビちゃん</text>
+  </g>
+  <g class="map-marker greet" data-map-target="samezuka">
+    <circle cx="505" cy="270" r="15" fill="#fff" stroke="#b23a3a" stroke-width="3"/><text x="505" y="276" text-anchor="middle" font-size="15">🦈</text>
+    <text x="505" y="250" text-anchor="middle" font-size="10" font-weight="900">サメヅカちゃん</text>
+  </g>
+
+  <!-- コラボカフェ屋台：10/10は町民体育館横、11-12は岩美中学校。地図上では岩美駅近くのイベント拠点として表示 -->
+  <g class="map-marker cafe-map-marker yatai-marker" data-cafe-target="__YATAI__">
+    <circle cx="515" cy="340" r="18" fill="#fff8f2" stroke="#d96b2f" stroke-width="4"/>
+    <text x="515" y="347" text-anchor="middle" font-size="17">🍴</text>
+    <text x="515" y="370" text-anchor="middle" font-size="11" font-weight="900">コラボカフェ屋台</text>
+  </g>
+
+  <!-- 実店舗：公式の所在地・エリア情報をもとに、町内の位置関係が分かるよう配置 -->
+  <g class="map-marker cafe-map-marker shop-marker" data-cafe-target="café bloom">
+    <circle cx="545" cy="168" r="13" fill="#fff" stroke="#2e8b57" stroke-width="3"/><text x="545" y="174" text-anchor="middle" font-size="13">☕</text><text x="545" y="148" text-anchor="middle" font-size="9" font-weight="800">café bloom</text>
+  </g>
+  <g class="map-marker cafe-map-marker shop-marker" data-cafe-target="軽食・喫茶 ふくちゃん">
+    <circle cx="565" cy="190" r="13" fill="#fff" stroke="#2e8b57" stroke-width="3"/><text x="565" y="196" text-anchor="middle" font-size="13">☕</text><text x="588" y="214" text-anchor="start" font-size="9" font-weight="800">ふくちゃん</text>
+  </g>
+  <g class="map-marker cafe-map-marker shop-marker" data-cafe-target="MARTY’S ICE CREAM">
+    <circle cx="590" cy="168" r="13" fill="#fff" stroke="#2e8b57" stroke-width="3"/><text x="590" y="174" text-anchor="middle" font-size="13">☕</text><text x="615" y="178" text-anchor="start" font-size="9" font-weight="800">MARTY’S</text>
+  </g>
+  <g class="map-marker cafe-map-marker shop-marker" data-cafe-target="港カフェ「アンカー」">
+    <circle cx="131" cy="283" r="14" fill="#fff" stroke="#2e8b57" stroke-width="3"/><text x="131" y="289" text-anchor="middle" font-size="13">☕</text><text x="131" y="309" text-anchor="middle" font-size="9" font-weight="900">港カフェ アンカー</text>
+    <text x="131" y="322" text-anchor="middle" font-size="8" fill="#66727d">※シャトル路線外</text>
+  </g>
+  <g class="map-marker cafe-map-marker shop-marker" data-cafe-target="リベルタ・ラ・クチーナ">
+    <circle cx="517" cy="301" r="13" fill="#fff" stroke="#2e8b57" stroke-width="3"/><text x="517" y="307" text-anchor="middle" font-size="13">☕</text><text x="517" y="325" text-anchor="middle" font-size="9" font-weight="800">リベルタ</text>
+  </g>
+  <g class="map-marker cafe-map-marker shop-marker" data-cafe-target="日替わり弁当 凛々">
+    <circle cx="497" cy="291" r="13" fill="#fff" stroke="#2e8b57" stroke-width="3"/><text x="497" y="297" text-anchor="middle" font-size="13">☕</text><text x="497" y="315" text-anchor="middle" font-size="9" font-weight="800">凛々</text>
+  </g>
+
+  <!-- グッズ販売 -->
+  <g class="map-marker goods" data-map-target="goods-gym"><circle cx="485" cy="345" r="14" fill="#fff" stroke="#8a5a00" stroke-width="3"/><text x="485" y="351" text-anchor="middle" font-size="14">🛍</text><text x="455" y="348" text-anchor="end" font-size="9" font-weight="800">公式グッズ</text></g>
+  <g class="map-marker gourmet-map-marker" data-gourmet-target="gourmet-fes" role="button" tabindex="0"><circle cx="675" cy="315" r="15" fill="#fff8f2" stroke="#d96b2f" stroke-width="4"/><text x="675" y="321" text-anchor="middle" font-size="15">🍴</text><text x="675" y="342" text-anchor="middle" font-size="9" font-weight="900">グルメ屋台村</text></g>
+  <g class="map-marker goods" data-map-target="goods-fes" role="button" tabindex="0"><circle cx="625" cy="350" r="13" fill="#fff" stroke="#8a5a00" stroke-width="3"/><text x="625" y="356" text-anchor="middle" font-size="13">🛍</text><text x="625" y="373" text-anchor="middle" font-size="8" font-weight="800">フェス限定物販</text></g>
+  <g class="map-marker goods" data-map-target="goods-town"><circle cx="158" cy="260" r="14" fill="#fff" stroke="#8a5a00" stroke-width="3"/><text x="158" y="266" text-anchor="middle" font-size="14">🛍</text><text x="158" y="286" text-anchor="middle" font-size="9" font-weight="800">町オリジナル</text></g>
+
+  <!-- 地域名 -->
+  <text x="265" y="115" font-size="15" font-weight="900" fill="#53636c">田後・浦富海岸</text>
+  <text x="660" y="118" font-size="14" font-weight="900" fill="#53636c">浦富・牧谷</text>
+  <text x="85" y="255" font-size="14" font-weight="900" fill="#53636c">大谷</text>
+  <text x="485" y="405" font-size="14" font-weight="900" fill="#53636c">新井・道の駅方面</text>
+
+  <g transform="translate(25,485)">
+    <circle cx="8" cy="0" r="7" fill="#fff" stroke="#2e8b57" stroke-width="3"/><text x="22" y="4" font-size="10">☕ 実店舗</text>
+    <circle cx="110" cy="0" r="7" fill="#fff" stroke="#d96b2f" stroke-width="3"/><text x="124" y="4" font-size="10">🍴 コラボカフェ屋台</text>
+    <circle cx="218" cy="0" r="7" fill="#fff" stroke="#8a5a00" stroke-width="3"/><text x="232" y="4" font-size="10">🛍 グッズ</text>
+  </g>
+  <text x="34" y="518" font-size="9" fill="#7a858c">※道路形状を正確に描いた地図ではなく、店舗・会場・シャトル路線の位置関係を把握するための簡易MAPです。</text>
+</svg>
+</div>
+
+<div class="card cafe-map-guide"><div class="name">☕ コラボ実店舗は地図から</div><div class="note">緑の☕が実店舗。<b>タップすると、今まで作ったその店舗の詳細ページが開きます。</b><br>🍴屋台村は、まず屋台村の一覧を開いてから店舗を選びます。</div></div>
+
+<div class="card shuttle-simple-note">
+  <div class="name">まずここだけ見ればOK</div>
+  <div class="note">🟦 浦富・田後へ　　🟩 総合運動場へ　　🟥 FDK・きなんせへ</div>
+</div>
+
+<div class="section">🚌 路線・ダイヤ</div>
+<div class="card route-card route-blue"><div class="name">田後線</div><div class="place">岩美駅 → 浦富海岸駐車場 → 田後港 → 荒砂神社 → 岩美駅</div><div class="note"><b>10/10：</b>9:00〜16:00 20分間隔／16:00〜17:30 15分間隔／17:30〜19:30 30分間隔／19:30〜21:30 20分間隔<br><b>10/11・12：</b>9:00〜17:00 30分間隔</div></div>
+<div class="card route-card route-red"><div class="name">道の駅線</div><div class="place">岩美駅 → FDK駐車場 → 道の駅きなんせ岩美 → 岩美駅</div><div class="note"><b>10/10：</b>9:05〜16:00 20分間隔／16:00〜17:30 15分間隔／17:30〜19:30 30分間隔／19:30〜21:35 20分間隔<br><b>10/11・12：</b>9:00〜17:05 30分間隔</div></div>
+<div class="card route-card route-green"><div class="name">THANKS FES線 <span class="badge">10/10限定</span></div><div class="place">岩美駅 → 岩美町民総合運動場 → 岩美駅</div><div class="note">14:40〜16:00 20分間隔／16:00〜17:30 15分間隔／17:30〜19:30 30分間隔／19:30〜21:15 15分間隔</div></div>
+
+<div class="section">🐧🦈 グリーティング</div>
+<div class="grid">
+  <div class="card"><div class="name">🐧 イワトビちゃん</div><div class="place">田後漁業協同組合横・漁村広場</div><div class="note">10/10：10:00／11:00／12:00 各15分。最寄り：田後港。</div><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=田後漁業協同組合">📍 地図を見る</a></div>
+  <div class="card"><div class="name">🦈 サメヅカちゃん</div><div class="place">岩美町役場</div><div class="note">10/10：13:00／14:00／15:00 各15分。岩美駅から徒歩圏。</div><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=岩美町役場">📍 地図を見る</a></div>
+</div>
+
+<div class="section">🛍 グッズ販売</div>
+<div id="goodsList"></div>
+
+
+
+</section><main>
+<section id="timeline" class="panel active">
+<h2>イベントタイムライン</h2>
+
+<div id="timelineList"></div>
+</section>
+
+<section id="cafes" class="panel">
+<h2>コラボカフェ・屋台</h2>
+<div class="card">
+<div class="name">公式ノベルティ</div>
+<div class="novelty-images">
+  <a href="https://www.iwamikanko.org/free-iwami2026/collabocafe/img/goods1.jpg" target="_blank" rel="noopener">
+    <img src="https://www.iwamikanko.org/free-iwami2026/collabocafe/img/goods1.jpg" alt="Free!×岩美町2026 コラボ限定ランチョンマット" loading="eager">
+    <span>ランチョンマット</span>
+  </a>
+  <a href="https://www.iwamikanko.org/free-iwami2026/collabocafe/img/goods2.jpg" target="_blank" rel="noopener">
+    <img src="https://www.iwamikanko.org/free-iwami2026/collabocafe/img/goods2.jpg" alt="Free!×岩美町2026 コラボ限定コースター" loading="eager">
+    <span>コースター</span>
+  </a>
+</div>
+<div class="note"><b>フード特典：</b>ランチョンマット 1種（1品につき1枚）<br><b>ドリンク・デザート特典：</b>コースター 3種・ランダム（1品につき1枚）</div>
+<div class="novelty-source">画像出典：<a href="https://www.iwamikanko.org/free-iwami2026/collabocafe/" target="_blank" rel="noopener">岩美町観光協会「Free!×岩美町2026 コラボカフェ＆屋台村」公式ページ</a></div>
+</div>
+<div class="card gourmet-fes-card">
+<div class="gourmet-fes-head"><div><div class="name">🍴 グルメ屋台村</div><div class="place">10/10（土）15:00〜21:00｜岩美町民総合運動場</div></div><span class="badge">現金のみ</span></div>
+<div class="stamp-box"><b>🎁 スタンプラリー</b><br>グルメ屋台村で<b>1会計につきスタンプ1個</b>。<br><b>3個で新規描き下ろしトレーディングカード1枚</b>と交換。全8種・ランダム。<br><span class="small">景品交換：岩美町商工会青年部（会場内）</span></div>
+<button type="button" class="detail-open-btn" onclick="openGourmetFes()">🍴 出店情報・スタンプラリー詳細</button>
+</div>
+<div class="card latest-info-card" style="background:#f8fbfd;border-color:#c9e1ea">
+<div class="name">🆕 10/5時点・直近の公式SNS情報</div>
+<div class="note">イベント直前に更新された内容のうち、当日の行動に関係しそうなものを抜粋しています。</div>
+<div class="latest-info-list">
+<div class="latest-info-item"><b>⚓ 港カフェ「アンカー」</b><br>10/10〜12のコラボ実施を公式Xで再案内。<b>キャラクタースプラッシュソーダ全8種・コースター対象、数量限定・先着順</b>。10/10は10:00〜15:00（LO14:30）、10/11・12は9:00〜15:30（LO15:00）。公式Instagramには実物のコラボドリンク写真も掲載されています。<br><a class="btn" target="_blank" rel="noopener" href="https://www.instagram.com/minatocafe_uradome/">📷 公式Instagram・最新ドリンク写真</a> <a class="btn" target="_blank" rel="noopener" href="https://x.com/yourunsentonari">X</a></div>
+<div class="latest-info-item"><b>🚚 カフェ HOUOU</b><br>コラボの「鮫柄のサメカツドッグ」は<b>900円</b>。10/10〜12のコラボカフェ出店時、キッチンカー周辺に<b>スマホ充電コーナーを設置予定（晴天時）</b>との公式X告知あり。混雑時はHOUOU利用者優先。<br><a class="btn" target="_blank" rel="noopener" href="https://x.com/Houou63387">公式X</a></div>
+<div class="latest-info-item"><b>🍰 A lot</b><br>10/10・11は屋台村、<b>10/12は出店なし</b>。10/10・11とも8:30から整理券配布。コラボ期間に向けて仕込み・準備を進めている旨の直近情報あり。</div>
+<div class="latest-info-item"><b>🥪 café bloom</b><br>9/27の公式Xで今年もFree!×岩美町2026コラボカフェに参加すると告知。現在掲載中の「つながる、彩りミルクプリン」「遙・真琴・凛・郁弥のサンドイッチ」などのメニュー情報はそのまま掲載。</div>
+<div class="latest-info-item"><b>🍱 龍神荘</b><br>直近の公式Xで、<b>予約受付なし・龍神荘の実店舗では販売せず、コラボカフェ屋台のみで販売</b>と再案内。9マス岩鳶弁当／岩鳶太巻き。</div>
+<div class="latest-info-item"><b>🛍 SANTEC</b><br>直近の公式Xで岩美町オリジナルグッズの最新ラインナップを公開。販売開始は10/10。さらに「SPLASH FREE」シリーズは<b>10/10〜10/17にサンテックでも販売予定</b>と公式案内されています。</div>
+</div>
+</div>
+<div class="warning">一覧は店舗を探しやすくするため簡潔にし、メニュー名・画像・価格などは「メニュー・詳細を見る」にまとめています。価格未公表のものは推測せず「価格未公表」としています。</div>
+<div id="cafeList"></div>
+</section>
+
+<section id="inventory" class="panel">
+<h2>🎁 コラボカフェ在庫チェック</h2>
+<div class="inventory-note"><b>現地で在庫・配布状況を確認したいときの公式SNS一覧</b><br>このタブはリアルタイム在庫を自動取得するものではありません。公式SNSで「完売」「配布終了」「まだあります」などの最新投稿が出ていないか、店舗ごとにすぐ確認できるようにしています。<br><br>🟢＝公式SNSを確認できる店舗　／　投稿がない場合は在庫状況は不明です。推測で「在庫あり・なし」にはしません。</div>
+<div id="inventoryList"></div>
+</section>
+
+<section id="train" class="panel">
+<h2>🚃 10/10・11 列車情報</h2>
+<div class="card"><b>行き：鳥取駅 → 岩美方面</b><div class="note">10/10・11に岩美へ向かうときに使いやすい時間帯を中心に、通常列車＋臨時列車を一覧表示します。</div></div>
+<div class="train-legend"><span class="train-key reg">通常列車</span><span class="train-key extra">臨時列車</span></div>
+<div id="trainsOutbound"></div>
+<div class="train-subnote">※臨時列車は情報提供に基づく掲載です。運転日は必ず各列車の表示を確認してください。</div>
+
+<div class="train-section">
+<div class="card"><b>帰り：岩美駅 → 鳥取方面</b><div class="note"><b>THANKS FESは公演17:00〜19:30。</b>イベント終了後に利用できる列車だけを表示します。citeturn0search2</div></div>
+<div class="train-legend"><span class="train-key reg">通常列車</span><span class="train-key extra">臨時列車</span></div>
+<div id="trainsInbound"></div>
+<div class="train-subnote">※臨時列車の情報：10/10のみ「東浜20:32発→鳥取」「東浜21:55発→鳥取」、10/10・11「鳥取8:43発→東浜」、10/10のみ「鳥取11:18発→東浜」。臨時列車はJR西日本で最終確認後に更新します。</div>
+</div>
+</section>
+
+</main>
+
+<div id="cafeHubModal" class="cafe-hub-modal" aria-hidden="true">
+  <div class="cafe-hub-head"><button id="cafeHubBack" type="button">← MAPに戻る</button><div class="name" style="font-size:15px">🍴 コラボカフェ屋台のコラボ店</div></div>
+  <div class="cafe-hub-body"><div class="card" style="background:#fff4ec;border-color:#f0d0bd"><div class="name">コラボカフェ屋台</div><div class="note">まずここでお店を選び、気になる店舗をタップすると、これまで作り込んだ店舗詳細が開きます。</div></div><div id="cafeHubList"></div></div>
+</div>
+
+<div id="gourmetFesModal" class="gourmet-modal" aria-hidden="true">
+  <div class="gourmet-modal-head"><button class="back" id="gourmetFesBack">← 戻る</button><div class="name" style="font-size:15px">グルメ屋台村</div></div>
+  <div class="gourmet-modal-body">
+    <div class="card gourmet-fes-card"><div class="name">🍴 10/10（土）15:00〜21:00</div><div class="place">岩美町民総合運動場</div><div class="note">グルメ屋台村は<b>現金のみ</b>。フェス会場内での飲食に利用できます。</div></div>
+    <div class="gourmet-note"><b>🎁 スタンプラリー</b><br>グルメ屋台村で<b>1会計につきスタンプ1個</b>。<br><b>3個集めると、新規描き下ろしトレーディングカードを1枚プレゼント。</b><br>全8種・ランダム。<br><b>景品交換：会場内の岩美町商工会青年部</b></div>
+    <div class="gourmet-section">🍴 グルメ屋台村 出店一覧</div><div class="note" style="margin:0 2px 8px">店名だけでなく、公式の出店者情報に掲載された主な販売商品も表示しています。</div>
+    <div class="gourmet-yatai-list" id="gourmetYataiList"></div>
+    <div class="gourmet-section">カードについて</div>
+    <div class="card"><div class="note">全8種・ランダム配布。今回のTHANKS FESでは先行プレゼントとして案内されています。今後の通年コラボ企画でも入手機会がある旨が案内されています。<br><br>※「24スタンプで全8種コンプリート」は、すべて異なるカードが出る保証がないため、アプリでは<b>必要スタンプ数として表示しません</b>。</div></div>
+  </div>
+</div>
+
+<div id="cafeDetailModal" class="cafe-detail-modal" aria-hidden="true">
+  <div class="cafe-detail-head"><button class="back" id="cafeDetailBack">← 一覧に戻る</button><div id="cafeDetailTitle" class="name" style="font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></div></div>
+  <div class="cafe-detail-body" id="cafeDetailBody"></div>
+</div>
+
+<footer>
+情報源：Free! Series Portal Site／岩美町観光協会（2026年10月4日確認）／各店舗公式サイト・公式SNS／JR西日本・公開時刻表等。<br>
+このアプリは個人利用向け。開催・運行・営業情報は公式発表・現地案内を優先してください。
+</footer>
+
+<script>
+const events=[
+{d:"2026-10-10",s:"09:00",e:"16:00",name:"コミュニティスペース・メッセージボード",place:"岩美町民体育館",note:"9:00〜16:00"},
+{d:"2026-10-10",s:"10:00",e:"15:00",name:"コラボカフェ屋台",place:"岩美町民体育館横 駐車場",note:"10/10限定"},
+{d:"2026-10-10",s:"10:00",e:"15:00",name:"Free!×岩美町 コラボカフェ実店舗・コラボカフェ屋台",place:"町内各所",note:"店舗ごとに時間・整理券等が異なる"},
+{d:"2026-10-10",s:"10:00",e:"12:15",name:"イワトビちゃん in 田後",place:"田後漁業協同組合横漁村広場",note:"10:00 / 11:00 / 12:00 各15分"},
+{d:"2026-10-10",s:"13:00",e:"15:15",name:"サメヅカちゃん in 岩美町役場",place:"岩美町役場",note:"13:00 / 14:00 / 15:00 各15分"},
+{d:"2026-10-10",s:"15:00",e:"16:00",name:"THANKS FES 2026・開場",place:"岩美町民総合運動場",note:"15:00開場。会場内のグルメ屋台村・フェス限定特別物販は15:00〜21:00。あなたは立見チケット購入済み"},
+{d:"2026-10-10",s:"16:00",e:"17:00",name:"OROZI（アニソンDJ）",place:"岩美町民総合運動場",note:"THANKS FES 2026"},
+{d:"2026-10-10",s:"17:00",e:"18:00",name:"傘踊り",place:"岩美町民総合運動場",note:"『Free!』楽曲による傘踊り"},
+{d:"2026-10-10",s:"18:00",e:"18:30",name:"ガラポン抽選会",place:"岩美町民総合運動場",note:"THANKS FES 2026"},
+{d:"2026-10-10",s:"18:30",e:"19:00",name:"THANKS VIDEO上映",place:"岩美町民総合運動場",note:"THANKS FES 2026"},
+{d:"2026-10-10",s:"19:00",e:"19:30",name:"キャスト・関係者挨拶",place:"岩美町民総合運動場",note:"THANKS FES 2026"},
+{d:"2026-10-10",s:"19:30",e:"20:30",name:"琉成（アニソンDJ）",place:"岩美町民総合運動場",note:"THANKS FES 2026"},
+{d:"2026-10-10",s:"20:30",e:"21:00",name:"DJ終了",place:"岩美町民総合運動場",note:"21:00閉場"},
+];
+
+const cafes=[
+["A lot（アロット）","岩美駅周辺・屋台村","10/10 屋台村 10:00〜15:00｜10/11 岩美中学校駐車場 10:00〜16:00（12日は出店なし）","全4品／スイーツ","予約不要・先着順","コースター"],
+["村上水産海陽亭 きなんせ岩美店","道の駅 きなんせ岩美","10/10 10:00〜15:00（夜は通常営業）｜10/11〜12 10:30〜14:30／17:00〜20:30","全2品／バーガー","予約不要・先着順","ランチョンマット"],
+["カフェ HOUOU","岩美駅周辺・大谷／屋台村","10/10 屋台村 10:30〜15:00｜10/11 岩美中学校駐車場 10:00〜16:00（終了後〜23:00実店舗）｜10/12 岩美中学校駐車場 10:00〜15:00（終了後〜23:00実店舗）","全1品／フード","予約受付あり","ランチョンマット"],
+["café bloom","浦富・牧谷","10/10 実店舗 10:00〜15:00｜10/11〜12 実店舗 10:00〜17:00","全13品／サンド・ドリンク等","整理券あり","ランチョンマット＋コースター"],
+["Beach Cafe ALOHA","岩美駅周辺・屋台村","10/10 屋台村 10:00〜15:00｜10/11 岩美中学校駐車場 10:00〜16:00｜10/12 岩美中学校駐車場 10:00〜15:00","全9品／サンド・カルピス","予約不要・先着順","ランチョンマット＋コースター"],
+["軽食・喫茶 ふくちゃん","浦富・牧谷","10/10 実店舗 10:00〜15:00（08:00整理券配布）｜10/11〜12 10:00〜17:00（08:00整理券配布）","全1品／ソーダ水","整理券あり","コースター"],
+["MARTY’S ICE CREAM","浦富・牧谷","10/10 実店舗 10:00〜15:00（持帰のみ）｜10/11〜12 10:00〜17:30（持帰のみ）","全4品／サンデー・プリン","整理券制・数量限定","コースター"],
+["港カフェ「アンカー」","大谷","10/10 実店舗 10:00〜15:00（LO14:30）｜10/11〜12 09:00〜15:30（LO15:00）","全8品／ソーダ","予約不要・先着順","コースター"],
+["めん処 日の出丸","岩美駅／道の駅周辺・屋台村","10/10 屋台村 10:00〜15:00｜10/11〜12 実店舗 11:00〜14:30／17:30〜20:00","全1品／担々麺","予約不要・先着順","ランチョンマット"],
+["リベルタ・ラ・クチーナ","岩美駅周辺","10/10〜11 実店舗 10:00〜15:00｜10/12 通常営業（コラボメニューなし）","全10品／サンド・ゼリー等","予約不要（08:00列形成）","ランチョンマット＋コースター"],
+["龍神荘","岩美駅エリア・屋台村","10/10 屋台村 10:00〜15:00｜10/11 岩美中学校駐車場 10:00〜16:00｜10/12 岩美中学校駐車場 10:00〜15:00","全2品／お弁当・太巻き","予約不要・先着順","ランチョンマット"],
+["日替わり弁当 凛々","岩美駅周辺","10/10 実店舗 10:00〜15:00（09:30整理券配布）｜10/11〜12 10:00〜16:00（09:30整理券配布）","全4品／弁当・串・サイダー","時間帯整理券あり","ランチョンマット＋コースター"],
+];
+
+const spots=[["田後神社","鳥取県岩美町田後503","Free! 第1話","主人公の自宅付近のモデル。第1話冒頭などに登場。"],["荒砂神社","鳥取県岩美町浦富2475-17","Free! 第1話／第7話／第9話／第10話","神社のモデル。複数話に登場。"],["田後公園・展望台","鳥取県岩美町田後509周辺","Free! 第1話","真琴たちが集まる場所として登場。"],["岩美駅・駅前","鳥取県岩美町浦富809","Free! 第5話／第9話／第11話","岩鳶駅のモデル。駅舎・駅前が登場。"],["岩美駅・駅構内","鳥取県岩美町浦富809","Free! 第3話","岩鳶駅構内・ホームのモデル。"],["大岩駅","鳥取県岩美町大谷1950","Free! 第3話","怜が降りた駅のモデル。"],["浦富海岸","鳥取県岩美町浦富","Free! 第5話／第8話","海岸のカットに登場。"],["田後港","鳥取県岩美町田後","Free! 第5話／第9話","出港や港の場面に登場。"],["田後裏入口","鳥取県岩美町田後39-12","Free! 第5話","田後への出入り口付近のカット。"],["田後漁業協同組合","鳥取県岩美町田後","Free! 第9話","漁港・漁協周辺の場面に登場。"],["田後薬師堂","鳥取県岩美町田後","Free! 第9話","田後地区の場面に登場。"],["港神社","鳥取県岩美町田後","Free! 第9話","田後地区の神社として登場。"],["鮫塚高校のお参り","鳥取県岩美町田後504","Free! 第9話","大会前のお参りの場面に登場。"],["遥の家","鳥取県岩美町田後503周辺","Free! 第1話／第8話／第9話","遥の家のモデル周辺。"],["網代隧道入口","鳥取県岩美町網代281-25","Free! 第7話","網代隧道入口のカット。"],["海岸線（下校途中）","鳥取県岩美町浦富2540-6周辺","Free! 第2話／第4話","下校途中の海岸線として登場。"],["ホームセンター","鳥取県岩美町浦富3327周辺","Free! 第2話","作中のホームセンターのモデル。"],["菜種五島","鳥取県岩美町田後周辺","Free! 第2話","菜種五島の場面。"],["コンビニ（浦富）","鳥取県岩美町浦富周辺","Free! 第5話","コンビニでアイスを買う場面。"],["岩鳶駅前・別地点","鳥取県岩美町浦富1035周辺","Free! 第9話","岩鳶駅前の別カット。"],["夜の海","鳥取県岩美町大谷864周辺","Free! OP","オープニングに登場する夜の海。"]];
+
+const trainsOutbound=[
+ ["08:11","通常","浜坂方面","通常列車"],
+ ["08:43","臨時","東浜行・9512D","10/10・11"],
+ ["11:18","臨時","東浜行・9514D","10/10のみ"],
+ ["12:15","通常","浜坂方面","通常列車"],
+ ["15:06","通常","浜坂方面","通常列車"],
+ ];
+const trainsInbound=[
+ ["20:29","通常","鳥取行","通常列車"],
+ ["20:32","臨時","東浜20:32発→鳥取・9515D","10/10のみ／岩美停車予定"],
+ ["21:52","通常","鳥取行","通常列車"],
+ ["21:55","臨時","東浜21:55発→鳥取・9517D","10/10のみ／岩美停車予定"],
+ ["23:08","通常","鳥取行","通常列車"]
+];
+
+function dt(s,e){return new Date(s+"+09:00").getTime() + (e?0:0)}
+function now(){return new Date()}
+function fmtDate(d){return d.toLocaleDateString("ja-JP",{year:"numeric",month:"numeric",day:"numeric",weekday:"short",timeZone:"Asia/Tokyo"})}
+function state(ev){
+ const n=now(), a=new Date(ev.d+"T"+ev.s+":00+09:00"), b=new Date(ev.d+"T"+ev.e+":00+09:00");
+ if(n>=b)return "ended"; if(n>=a)return "live"; return "soon";
+}
+function stateText(s){return s==="live"?"開催中":s==="ended"?"開催終了":"これから"}
+function renderClock(){
+ const now=new Date();
+ const pad=n=>String(n).padStart(2,"0");
+ const el=document.getElementById("clock");
+ if(el) el.textContent=`${pad(now.getHours())}:${pad(now.getMinutes())}`;
+}
+function renderTimeline(){
+ const el=document.getElementById("timelineList"); el.innerHTML="";
+ const sorted=[...events].sort((a,b)=>(a.d+a.s).localeCompare(b.d+b.s));
+ sorted.forEach(ev=>{
+  const s=state(ev), d=document.createElement("div"); d.className="card event "+s;
+  d.innerHTML=`<div class="row"><div><div class="name">${ev.name}</div><div class="place">${ev.place}</div></div><span class="badge ${s}">${stateText(s)}</span></div><div class="time">${ev.d.slice(5).replace("-","/")} ${ev.s}〜${ev.e}</div><div class="note">${ev.note}</div>${ev.name.startsWith("THANKS FES 2026")?'<button type="button" class="detail-open-btn" onclick="openGourmetFes()">🍴 グルメ屋台村・スタンプラリーを見る</button>':''}`;
+  el.appendChild(d);
+ });
+}
+function renderNext(){
+ const active=events.filter(e=>state(e)==="live").slice(0,5), soon=events.filter(e=>state(e)==="soon").slice(0,5);
+ const list=[...active,...soon]; const el=document.getElementById("nextEvents"); el.innerHTML="";
+ if(!list.length) el.innerHTML='<div class="card small">現在、表示対象のイベントはありません。</div>';
+ list.forEach(ev=>{let d=document.createElement("div");d.className="card";d.innerHTML=`<div class="row"><div><div class="name">${ev.name}</div><div class="place">${ev.place}</div></div><span class="badge ${state(ev)}">${stateText(state(ev))}</span></div><div class="time">${ev.s}〜${ev.e}</div>`;el.appendChild(d)});
+}
+function renderSpots(){
+ const el=document.getElementById("spotList"); if(!el) return;
+ el.innerHTML="";
+ spots.forEach(s=>{
+  const q=encodeURIComponent(s[1]);
+  const d=document.createElement("div"); d.className="card";
+  d.innerHTML=`<div class="name">${s[0]}</div>
+  <div class="place">${s[1]}</div>
+  <div class="badge" style="display:inline-block;margin-top:7px">${s[2]}</div>
+  <div class="note" style="margin-top:8px">${s[3]}</div>
+  <div style="margin-top:10px"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${q}">📍 地図を見る</a></div>`;
+  el.appendChild(d);
+ });
+} 
+function renderTrainList(id, rows){
+ const el=document.getElementById(id); if(!el)return; el.innerHTML="";
+ rows.forEach(r=>{
+   const extra=r[1]==="臨時";
+   const d=document.createElement("div"); d.className="train-card "+(extra?"extra":"");
+   d.innerHTML=`<div class="train-time">${r[0]}</div><div class="train-main"><div class="train-type">${r[2]}</div><div class="train-note">${r[3]}</div></div><span class="train-badge">${extra?"臨時":"通常"}</span>`;
+   el.appendChild(d);
+ });
+}
+function renderTrains(){renderTrainList("trainsOutbound",trainsOutbound);renderTrainList("trainsInbound",trainsInbound);}
+
+
+const goodsLocations=[
+ {id:"goods-gym",name:"岩美町民体育館",type:"イベント記念グッズ＋京アニショップ！出張店舗",when:"10/10",time:"整理券枠は満了／あなたは11:00〜16:00予定のフリー販売狙い",address:"鳥取県岩美郡岩美町浦富1041-5",items:["岩美町イベント記念グッズ：マリントートバッグ 4,000円／アクスタポーチ 2,500円／ランダムカードコレクション 500円（全62種）","ORCHESTRA CONCERT 2020：アクリルスタンドA／水面キーホルダー／グリッターキーホルダー／フレークシール／オーロラステッカー","ORCHESTRA CONCERT 2021：ブロックアクリルスタンド／アクリルカラビナ／クリアうちわ／フレークシール／オーロラステッカー／フルグラフィックTシャツ","ORCHESTRA CONCERT 2025：アクリルスタンドB／フレークシール／オーロラステッカー","京アニショップ！SPLASH FREE：アクリルスタンド／クリアカード／缶バッジ／イワトビちゃんメタルキーホルダー／スタンドアクリルチャーム／ステッカー／Tシャツ／ブロマイドほか"],note:"フリー販売は11:00〜16:00予定。整理券なしでも購入可能。整理券制販売の列がなくなり次第開始、時間は前後する場合あり。在庫限り。",images:[
+  ["マリントートバッグ","https://iwatobi-sc.com/img/event/iwami2026/goods/goods01.webp","4,000円"],
+  ["アクスタポーチ","https://iwatobi-sc.com/img/event/iwami2026/goods/goods02.webp","2,500円"],
+  ["ランダムカードコレクション（全62種）","https://iwatobi-sc.com/img/event/iwami2026/goods/goods03.webp","500円"],
+  ["ORCHESTRA 2020 アクリルスタンドA","https://iwatobi-sc.com/img/event/iwami2026/goods/goods04.webp","各1,980円"],
+  ["ORCHESTRA 2020 水面キーホルダー","https://iwatobi-sc.com/img/event/iwami2026/goods/goods05.webp","各1,200円"],
+  ["ORCHESTRA 2020 グリッターキーホルダー","https://iwatobi-sc.com/img/event/iwami2026/goods/goods06.webp","各1,500円"],
+  ["ORCHESTRA 2020 フレークシールA","https://iwatobi-sc.com/img/event/iwami2026/goods/goods07.webp","1,400円"],
+  ["ORCHESTRA 2020 オーロラステッカーA","https://iwatobi-sc.com/img/event/iwami2026/goods/goods08.webp","1,600円"],
+  ["ORCHESTRA 2021 ブロックアクリルスタンド","https://iwatobi-sc.com/img/event/iwami2026/goods/goods09.webp","各1,980円"],
+  ["ORCHESTRA 2021 アクリルカラビナ","https://iwatobi-sc.com/img/event/iwami2026/goods/goods10.webp","各1,500円"],
+  ["ORCHESTRA 2021 クリアうちわ","https://iwatobi-sc.com/img/event/iwami2026/goods/goods11.webp","各1,000円"],
+  ["ORCHESTRA 2021 フレークシールB","https://iwatobi-sc.com/img/event/iwami2026/goods/goods12.webp","1,400円"],
+  ["ORCHESTRA 2021 オーロラステッカーB","https://iwatobi-sc.com/img/event/iwami2026/goods/goods13.webp","1,600円"],
+  ["ORCHESTRA 2021 フルグラフィックTシャツ 七瀬遙","https://iwatobi-sc.com/img/event/iwami2026/goods/goods14.webp","7,000円"],
+  ["ORCHESTRA 2025 アクリルスタンドB","https://iwatobi-sc.com/img/event/iwami2026/goods/goods15.webp","各1,980円"],
+  ["ORCHESTRA 2025 フレークシールC","https://iwatobi-sc.com/img/event/iwami2026/goods/goods16.webp","1,400円"],
+  ["ORCHESTRA 2025 オーロラステッカーC","https://iwatobi-sc.com/img/event/iwami2026/goods/goods17.webp","1,600円"],
+  ["SPLASH FREE アクリルスタンド","https://iwatobi-sc.com/img/event/iwami2026/goods/kyoanishop_goods01.webp","各1,980円"],
+  ["SPLASH FREE クリアカードセット","https://iwatobi-sc.com/img/event/iwami2026/goods/kyoanishop_goods02.webp","1,650円"],
+  ["SPLASH FREE 缶バッジコレクション","https://iwatobi-sc.com/img/event/iwami2026/goods/kyoanishop_goods03.webp","660円"],
+  ["イワトビちゃんメタルキーホルダー","https://iwatobi-sc.com/img/event/iwami2026/goods/kyoanishop_goods04.webp","1,980円"],
+  ["Come visit IWATOBI スタンドアクリルチャーム","https://iwatobi-sc.com/img/event/iwami2026/goods/kyoanishop_goods05.webp","1,980円"],
+  ["Come visit IWATOBI ステッカーセット","https://iwatobi-sc.com/img/event/iwami2026/goods/kyoanishop_goods06.webp","1,320円"],
+  ["Come visit IWATOBI Tシャツ","https://iwatobi-sc.com/img/event/iwami2026/goods/kyoanishop_goods07.webp","4,400円"],
+  ["Free!シリーズ ブロマイドコレクション Ending Scene","https://iwatobi-sc.com/img/event/iwami2026/goods/kyoanishop_goods08.webp","880円"]
+ ]},
+ {id:"goods-fes",name:"岩美町民総合運動場内・グルメ屋台横",type:"フェス限定物販",when:"10/10",time:"15:00〜21:00（列がなくなり次第終了予定）",address:"鳥取県岩美郡岩美町高山302",items:["YORKE.コラボの特別グッズなど"],note:"先着販売・整理券なし。フェス会場内のためフェスチケットが必要。詳細ラインナップは公式発表を確認。"},
+ {id:"goods-town",name:"岩美町オリジナルグッズ販売店",type:"岩美町オリジナルグッズ・名産品",when:"10/10〜",time:"各販売店の営業時間に準じる",address:"岩美町観光会館／有限会社サンテック／浦富海岸島めぐり遊覧船乗り場／道の駅きなんせ岩美",items:["Free! Series×岩美町2026 オリジナルグッズ","岩美町×映画 ハイ☆スピード！ オリジナルグッズ","岩美町の名産品","SPLASH FREEシリーズ（有限会社サンテックでは10/10〜10/17販売予定）"],note:"販売場所：岩美町観光会館／有限会社サンテック／浦富海岸島めぐり遊覧船乗り場／道の駅きなんせ岩美 ほか。SPLASH FREEシリーズは10/10〜10/17にサンテックでも販売予定。いずれも在庫限り・内容変更の可能性あり。",images:[["SANTEC 最新ラインナップ画像（X投稿）","https://pic.x.com/ClaO0mhjLF","画像を見る"]],links:[["岩美町観光協会 公式案内","https://www.iwamikanko.org/free-iwami2026/"],["SANTEC 公式Xの最新ラインナップ投稿","https://x.com/santec_k/status/2106314065119269259"]]},
+];
+function goodsMapUrl(q){return "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q)}
+function renderGoods(){
+ const el=document.getElementById("goodsList"); if(!el)return;
+ el.innerHTML="";
+ goodsLocations.forEach(g=>{
+   const d=document.createElement("div");d.className="card goods-card"; d.dataset.goodsId=g.id;
+   const imgs=g.images?`<div class="goods-gallery">${g.images.map(im=>`<div class="goods-product"><a href="${im[1]}" target="_blank" rel="noopener"><img src="${im[1]}" alt="${im[0]}" loading="lazy"></a><div class="goods-product-name">${im[0]}</div><div class="goods-price">${im[2]}</div></div>`).join("")}</div>`:"";
+   d.innerHTML=`<div class="name">🛍 ${g.name}</div><div class="badge" style="margin-top:6px">${g.type}</div><div class="place">${g.when}｜${g.time}</div>${g.id==="goods-gym"?'<div class="goods-focus">🎯 あなた向け：整理券枠は満了 → 11:00〜16:00予定のフリー販売を狙う</div>':''}${imgs}<ul class="goods-items">${g.items.map(x=>`<li>${x}</li>`).join("")}</ul><div class="note">${g.note}</div>${g.links?`<div class="goods-links">${g.links.map(x=>`<a class="btn" target="_blank" rel="noopener" href="${x[1]}">↗ ${x[0]}</a>`).join("")}</div>`:""}<div class="btns"><a class="btn" target="_blank" rel="noopener" href="${goodsMapUrl(g.address)}">📍 地図・道案内</a><a class="btn" target="_blank" rel="noopener" href="https://iwatobi-sc.com/event/iwami2026/goods/">公式グッズ詳細 ↗</a></div>`;
+   el.appendChild(d);
+ });
+}
+function showShuttleDetail(target){ return; }
+
+const gourmetYatai=[
+ ["するがや祇園下里","ひやしあめ ほか"],
+ ["ちづの農家旬菜屋","ドブロク販売 ほか"],
+ ["ビストロ25","オムライス ほか"],
+ ["やまと家","大山どりのジャンボねぎま ほか"],
+ ["鉄板焼き とら","ホルソバ ほか"],
+ ["岡久刃物","梨、みかん、柿 ほか"],
+ ["剛遊丸","白イカ焼き ほか"],
+ ["Beachcafe＆Outdoor ALOHA","ベーコンステーキ串 ほか"],
+ ["sekisou","ホルソバ ほか"],
+ ["白兎屋","大山ミルクレープ ほか"],
+ ["緑笑だるまや","チーズハットグ ほか"],
+ ["レコアスキッチン","フルーツあめ ほか"],
+ ["sun-in まひろ","焼きそば ほか"],
+ ["SORA","タコライス ほか"],
+ ["グランツ","牛串 ほか"],
+ ["Nキッチン","カレー ほか"],
+ ["café DATCHA","クレープ ほか"],
+ ["Lelian","鳥取県産牛ステーキ丼 ほか"],
+ ["ウッチー","射的コーナー"],
+ ["鳥取献立会","唐揚げ ほか"],
+ ["ラパン・ブラン","焼きそば ほか"],
+ ["まるた","ロングポテト ほか"],
+ ["たこ忠","たこ焼き ほか"],
+ ["おいで屋","フランクフルト ほか"],
+ ["コンセプト","角煮バーガー ほか"],
+ ["Magokoro","ホルソバ ほか"],
+ ["石窯ダイニング クミン","トルネードポテト ほか"],
+ ["ロマン・カンパニー","メロンパン各種 ほか"],
+ ["多幸福","たこやき ほか"]
+];
+function renderGourmetFes(){
+ const el=document.getElementById('gourmetYataiList'); if(!el)return;
+ el.innerHTML=gourmetYatai.map((x,i)=>`<div><b>${i+1}. ${x[0]}</b><small>🍴 ${x[1]}</small></div>`).join('');
+}
+function openGourmetFes(){renderGourmetFes();const m=document.getElementById('gourmetFesModal');m.classList.add('open');m.setAttribute('aria-hidden','false');window.scrollTo(0,0);}
+function closeGourmetFes(){const m=document.getElementById('gourmetFesModal');m.classList.remove('open');m.setAttribute('aria-hidden','true');}
+
+function renderCafeHub(){
+ const el=document.getElementById("cafeHubList"); if(!el)return;
+ el.innerHTML="";
+ cafeDisplayFromRows().filter(c=>c.venue==="屋台村").forEach(c=>{
+   const d=document.createElement("div");
+   d.className="cafe-card yatai"; d.dataset.cafeName=c.name;
+   d.innerHTML=`<div class="cafe-label yatai">🍴 コラボカフェ屋台</div><div class="name">${c.name}</div><div class="cafe-meta">${c.location}<br>${c.schedule}</div><div class="cafe-tags"><span class="cafe-tag">🍴 ${c.menu}</span><span class="cafe-tag">🎁 ${c.novelty}</span>${c.reservation?`<span class="cafe-tag">ℹ️ ${c.reservation}</span>`:""}</div>`;
+   const b=document.createElement("button"); b.className="detail-open-btn"; b.type="button"; b.textContent="🍴 メニュー・詳細を見る"; b.onclick=()=>{ closeCafeHub(); openCafeDetail(c.name,null); };
+   d.appendChild(b); el.appendChild(d);
+ });
+}
+function openCafeHub(){
+ renderCafeHub();
+ const m=document.getElementById('cafeHubModal'); m.classList.add('open'); m.setAttribute('aria-hidden','false'); window.scrollTo(0,0);
+}
+function closeCafeHub(){
+ const m=document.getElementById('cafeHubModal'); m.classList.remove('open'); m.setAttribute('aria-hidden','true');
+}
+function initShuttleMap(){
+ document.querySelectorAll('#shuttleMap .goods').forEach(el=>{
+   const go=()=>{
+     const id=el.getAttribute('data-map-target');
+     const card=document.querySelector('#goodsList [data-goods-id="'+id+'"]');
+     if(card){
+       card.scrollIntoView({behavior:'smooth',block:'start'});
+       card.style.outline='3px solid #d6a441';
+       setTimeout(()=>card.style.outline='',1800);
+     }
+   };
+   el.addEventListener('click',go);
+   el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
+ });
+ document.querySelectorAll('#shuttleMap .gourmet-map-marker').forEach(el=>{
+   const go=()=>openGourmetFes();
+   el.addEventListener('click',go);
+   el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
+ });
+ document.querySelectorAll('#shuttleMap .cafe-map-marker').forEach(el=>{
+   el.addEventListener('click',()=>{
+     const name=el.dataset.cafeTarget;
+     if(name==='__YATAI__'){ openCafeHub(); return; }
+     const c=cafeDisplayFromRows().find(x=>x.name===name);
+     if(c) openCafeDetail(name,null);
+   });
+ });
+}
+function cafeDisplayFromRows(){
+ return (Array.isArray(cafes)?cafes:[]).map(row=>{
+   const name=String(row[0]||"店舗名未確認");
+   const location=String(row[1]||"場所未確認");
+   const schedule=String(row[2]||"営業情報未確認");
+   const menu=String(row[3]||"コラボ内容未発表");
+   const reservation=String(row[4]||"");
+   const novelty=String(row[5]||"未発表");
+   const yatai=/屋台村/.test(schedule);
+   return {name,location,schedule,menu,reservation,novelty,venue:yatai?"屋台村":"実店舗",stamp:yatai};
+ });
+}
+function cafeMapUrl(name,location){
+ const special={
+   "村上水産海陽亭 きなんせ岩美店":"35.5676831171871,134.325665575857",
+   "村上水産海陽亭":"35.5676831171871,134.325665575857"
+ };
+ const q=special[name] || (name+" "+location);
+ return "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
+}
+const cafeDetails={
+ "A lot（アロット）":{image:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/2/1.jpg",items:["全4品：イワトビちゃんサブレ／ブラウニーほか（価格未公表）"],note:"10/10・11は屋台村。10/10は8:30から整理券配布。コースター対象。",source:"岩美町観光協会公式ページ掲載内容・公式掲載画像"},
+ "村上水産海陽亭 きなんせ岩美店":{image:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/4/1.jpg",items:["さばカツバーガー（価格未公表）","あごカツバーガー（価格未公表）"],note:"全2品。10/10は10:00〜15:00、夜は通常営業。10/11・12は10:30〜14:30／17:00〜20:30。予約不要・先着順。フード特典としてランチョンマット。",source:"岩美町観光協会公式ページ・公式掲載画像"},
+ "カフェ HOUOU":{image:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/5/1.jpg",items:["鮫柄のサメカツドッグ　900円"],note:"全1品。10/10は屋台村、10/11・12は昼が岩美中学校屋台、終了後は大谷の実店舗。予約受付あり。",source:"岩美町観光協会公式ページ・公式掲載画像"},
+ "café bloom":{image:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/6/1.jpg",images:[
+  {url:"https://fxtwitter.com/cafebloom530/status/2104709832897114604.jpg",label:"つながる、彩りミルクプリン",source:"café bloom 公式X",link:"https://x.com/cafebloom530/status/2104709832897114604"},
+  {url:"https://fxtwitter.com/cafebloom530/status/2104689040067059740.jpg",label:"遙・真琴・凛・郁弥のサンドイッチ",source:"café bloom 公式X",link:"https://x.com/cafebloom530/status/2104689040067059740"}
+],items:["🍮 つながる、彩りミルクプリン：なめらかなパンナコッタ＋8色のゼリー（価格未公表）","🥪 遙・真琴・凛・郁弥のサンドイッチ：4人それぞれの『好き』を詰め込んだサンドイッチ（価格未公表）","全13品：サンド各種／プリン／ドリンク"],note:"整理券あり。ランチョンマット＋コースター対象。店舗公式Xでメニュー紹介画像を公開中。",source:"岩美町観光協会公式ページ・café bloom 公式X"},
+ "Beach Cafe ALOHA":{image:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/8/9.jpg",images:[
+  {url:"https://pic.x.com/ohalQ9BL1s",label:"Free!クロワッサンサンド",source:"Beach Cafe & Outdoor ALOHA 公式X",link:"https://x.com/BeachOutdoor/status/2104457159522357566",fallback:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/8/9.jpg"}
+],items:["Free!クロワッサンサンド　800円","カルピス系ドリンク8種（価格未公表）"],note:"店舗公式Xで、予約不要・個数制限なし・十分な数量を用意する予定と案内。ランチョンマット／コースター対象。",source:"岩美町観光協会公式ページ・Beach Cafe & Outdoor ALOHA 公式X"},
+ "軽食・喫茶 ふくちゃん":{image:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/9/1.png",items:["岩鳶中学校の水泳部ソーダ水（価格未公表）"],note:"全1品。コースター対象。10/10・11・12とも8:00から整理券配布。",source:"岩美町観光協会公式ページ・公式掲載画像"},
+ "MARTY’S ICE CREAM":{image:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/10/1.png",images:[
+  {url:"https://pic.x.com/z8xoHnPfMn",label:"4種のコラボメニュー紹介",source:"マーティーズアイスクリーム＆デザインイナバノ 公式X",link:"https://x.com/designinabano",fallback:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/10/1.png"}
+],items:["🐬 岩鳶おかえりサンデー（ラムネ／バニラ）　850円","🦈 YES‼鮫柄水泳サンデー（カシス／バニラ）　850円","🐬 岩鳶BLUEミルクプリン（ライチ＋グレープフルーツの青いゼリー／わらび餅／パンナコッタ）　800円","🦈 鮫柄REDミルクプリン（カシス＋烏龍茶ゼリー／mixベリー／杏仁豆腐）　800円"],note:"2部制の整理券。持帰りのみ。コースターは数量限定。店舗公式Xでアレルゲン情報も公開されています。",source:"岩美町観光協会公式ページ・MARTY’S ICE CREAM 公式X"},
+ "港カフェ「アンカー」":{image:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/11/1.jpg",images:[{url:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/11/1.jpg",label:"コラボドリンク掲載画像",source:"岩美町観光協会公式ページ",link:"https://www.iwamikanko.org/free-iwami2026/collabocafe/"}],items:["全8品：キャラクタースプラッシュソーダ各種（価格未公表）"],note:"予約不要・先着順。10/10は10:00〜15:00（LO14:30）、10/11・12は9:00〜15:30（LO15:00）。公式Instagramにも実物のコラボドリンク写真が掲載されています。",source:"岩美町観光協会公式ページ・港カフェ公式X / Instagram",socialLinks:[['📷 公式Instagram・最新ドリンク写真','https://www.instagram.com/minatocafe_uradome/'],['公式X','https://x.com/yourunsentonari']]},
+ "めん処 日の出丸":{image:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/12/1.jpg",items:["旨辛担々麺（価格未公表）"],note:"全1品。10/10は屋台村、10/11・12は実店舗。ランチョンマット対象。",source:"岩美町観光協会公式ページ・公式掲載画像"},
+ "リベルタ・ラ・クチーナ":{image:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/14/1.jpg",items:["全10品：サバサンド／キャラクターゼリー各種（価格未公表）"],note:"10/10・11限定。8:00から列形成。10/12は通常営業でコラボ提供なし。",source:"岩美町観光協会公式ページ・公式掲載画像"},
+ "龍神荘":{image:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/15/1.jpg",images:[
+  {url:"https://pic.x.com/WIOfc0272I",label:"9マス岩鳶弁当・岩鳶太巻き紹介画像",source:"昭和民宿 龍神荘 公式X",link:"https://x.com/IwamiRyujin/status/2102571659572175292",fallback:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/15/1.jpg"}
+],items:["9マス岩鳶弁当（価格未公表）","岩鳶太巻き（価格未公表）"],note:"予約受付なし。龍神荘の実店舗では販売せず、期間中の屋台村で販売。ランチョンマット対象。",source:"岩美町観光協会公式ページ・龍神荘公式X"},
+ "日替わり弁当 凛々":{image:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/16/1.jpg",items:["のり弁（価格未公表）","さばなん（価格未公表）","フライ串（価格未公表）","サイダー（価格未公表）"],note:"全4品。時間帯整理券あり。ランチョンマット＋コースター対象。",source:"岩美町観光協会公式ページ・公式掲載画像"},
+};
+let cafeReturnScrollY=0;
+let cafeReturnEl=null;
+function openCafeDetail(name, returnEl=null){
+ cafeReturnEl=returnEl||document.querySelector(`[data-cafe-name="${CSS.escape(name)}"]`);
+ cafeReturnScrollY=window.scrollY||window.pageYOffset||0;
+ const c=cafeDisplayFromRows().find(x=>x.name===name)||{name};
+ const d=cafeDetails[name]||{};
+ const body=document.getElementById('cafeDetailBody');
+ document.getElementById('cafeDetailTitle').textContent=name;
+ const items=(d.items||[c.menu||'詳細未確認']).map(x=>`<div class="menu-item"><div class="menu-title">${x}</div></div>`).join('');
+ const gallery=(d.images&&d.images.length)?`<div class="cafe-image-gallery">${d.images.map((im,i)=>{
+   const xlink=im.link&&/x\.com\//.test(im.link);
+   const direct=im.url&&(/fxtwitter\.com\//.test(im.url)||/pbs\.twimg\.com\//.test(im.url));
+   const src=(direct?im.url:(im.fallback||d.image||''));
+   return `<div class="cafe-image-card"><img class="cafe-detail-image" src="${src}" alt="${name} ${im.label||'メニュー画像'}" loading="lazy" onerror="if(this.dataset.fallback&&this.src!==this.dataset.fallback){this.src=this.dataset.fallback}else{this.style.display='none'}" data-fallback="${im.fallback||d.image||''}">${xlink?`<div class="image-credit">📷 画像の出典：${im.source}<br><a href="${im.link}" target="_blank" rel="noopener">「${im.label||'元の投稿'}」を見る ↗</a></div>`:''}</div>`;
+ }).join('')}</div>`:'';
+ const img=(!d.images||!d.images.length)&&d.image?`<img class="cafe-detail-image" src="${d.image}" alt="${name} コラボメニュー画像" loading="lazy">`:'';
+ const imageSource=d.imageSource||'https://www.iwamikanko.org/free-iwami2026/collabocafe/';
+ const imageSourceLabel=d.imageSourceLabel||'岩美町観光協会 公式コラボカフェページ';
+ const imageCredit=(!d.images||!d.images.length)&&d.image?`<div class="image-credit">📷 画像の出典<br><a href="${imageSource}" target="_blank" rel="noopener">${imageSourceLabel}の画像を見る ↗</a></div>`:'';
+ const map=cafeMapUrl(name,c.location||'');
+ const isYatai=c.venue==="屋台村";
+ const mapBtn=isYatai?"":`<a class="detail-btn" target="_blank" rel="noopener" href="${map}">📍 地図・道案内</a>`;
+ body.innerHTML=`${gallery}${img}${imageCredit}<div class="cafe-meta"><b>📍 ${c.location||''}</b><br>${c.schedule||''}</div><div class="section">🍴 メニュー</div>${items}<div class="section">🎁 特典・注意</div><div class="cafe-detail-note">${d.note||'詳細は公式発表をご確認ください。'}<br><br>ノベルティ：${c.novelty||'未発表'}</div><div class="detail-actions">${mapBtn}${d.reservationLink?`<a class="detail-btn" target="_blank" rel="noopener" href="${d.reservationLink}">📅 ${d.reservationLabel||"予約ページ"}</a>`:""}${d.socialLinks?d.socialLinks.map(x=>`<a class="detail-btn" target="_blank" rel="noopener" href="${x[1]}">${x[0]}</a>`).join(''):''}</div><div class="detail-source">情報確認：2026年10月5日<br>${d.source||'岩美町観光協会公式ページ'}<br>※価格・内容が未公表のものは推測せず「価格未公表」としています。画像は店舗公式SNSの画像を優先し、画像を直接表示できない場合は岩美町観光協会の掲載画像を使用しています。最新情報・変更は各店舗／公式情報を優先してください。</div>`;
+ if(window.twttr&&twttr.widgets){twttr.widgets.load(body);}
+ const modal=document.getElementById('cafeDetailModal'); modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); window.scrollTo(0,0);
+}
+function goToCafeOnShuttle(name){
+ const modal=document.getElementById('cafeDetailModal');
+ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true');
+ activateTab('shuttle');
+ requestAnimationFrame(()=>setTimeout(()=>{
+   const el=document.querySelector(`[data-cafe-name="${CSS.escape(name)}"]`);
+   const marker=document.querySelector(`#shuttleMap .cafe-map-marker[data-cafe-target="${CSS.escape(name)}"]`);
+   if(marker){marker.classList.add('cafe-focus');marker.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(()=>marker.classList.remove('cafe-focus'),1800);return;}
+   const yatai=document.querySelector('#shuttleMap .yatai-marker');
+   if(yatai){yatai.classList.add('cafe-focus');setTimeout(()=>yatai.classList.remove('cafe-focus'),1800);openCafeHub();}
+ },30));
+}
+function closeCafeDetail(){const modal=document.getElementById('cafeDetailModal');modal.classList.remove('open');modal.setAttribute('aria-hidden','true');requestAnimationFrame(()=>{ setTimeout(()=>{ if(cafeReturnEl && document.body.contains(cafeReturnEl)){ const y=cafeReturnEl.getBoundingClientRect().top+window.pageYOffset-Math.max(70,(document.getElementById("fixedHeader")||{}).offsetHeight||0)-20; window.scrollTo(0,Math.max(0,y)); } else { window.scrollTo(0,cafeReturnScrollY); } },0); });}
+function renderCafes(){
+ const el=document.getElementById("cafeList"); if(!el)return;
+ el.innerHTML="";
+ const today=new Date();
+ const is1011=today.getMonth()+1===10 && today.getDate()===11;
+ const sorted=cafeDisplayFromRows().sort((a,b)=>{
+   if(is1011){
+    const am=a.schedule.includes("岩美中学校"), bm=b.schedule.includes("岩美中学校");
+    if(am!==bm) return am?-1:1;
+   }
+   if(a.venue!==b.venue) return a.venue==="屋台村"?-1:1;
+   return a.name.localeCompare(b.name,"ja");
+ });
+ sorted.forEach(c=>{
+   const type=c.venue==="屋台村"?"yatai":"shop";
+   const icon=type==="yatai"?"🍴":"🏠";
+   const d=document.createElement("div");
+   d.className="cafe-card "+type;
+   d.dataset.cafeName=c.name;
+   d.innerHTML=`
+    <div class="cafe-label ${type}">${icon} ${c.venue}</div>
+    <div class="name">${c.name}</div>
+    <div class="cafe-meta">${c.location}<br>${c.schedule}</div>
+    <div class="cafe-tags">
+      <span class="cafe-tag">🍴 コラボ内容：${c.menu}</span>
+      <span class="cafe-tag">🎁 ノベルティ：${c.novelty}</span>
+      ${c.reservation?`<span class="cafe-tag">ℹ️ ${c.reservation}</span>`:""}
+      ${c.stamp?'<span class="cafe-tag">● スタンプ対象</span>':''}
+    </div>
+`;
+   const detail=document.createElement("button"); detail.className="detail-open-btn"; detail.type="button"; detail.textContent="🍴 メニュー・詳細を見る"; detail.onclick=()=>openCafeDetail(c.name,d); d.appendChild(detail);
+   if(type==="shop"){
+    const a=document.createElement("a"); a.className="map-btn"; a.target="_blank"; a.rel="noopener";
+    a.href=cafeMapUrl(c.name,c.location); a.textContent="📍 道案内・地図"; d.appendChild(a);
+   }
+   el.appendChild(d);
+ });
+}
+function escapeHtml(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));}
+
+const inventorySources=[
+ {name:"村上水産海陽亭 きなんせ岩美店",goods:"ランチョンマット（フード特典）",links:[["Instagram","https://www.instagram.com/kaiyoutei_iwami/"]]},
+ {name:"café bloom",goods:"ランチョンマット＋コースター",links:[["X","https://x.com/cafebloom530"],["Instagram","https://www.instagram.com/cafebloom530/"]]},
+ {name:"Beach Cafe ALOHA",goods:"ランチョンマット＋コースター",links:[["Instagram","https://www.instagram.com/beach.cafe.aloha/"]]},
+ {name:"軽食・喫茶 ふくちゃん",goods:"コースター",links:[["Instagram","https://www.instagram.com/fukuchan_iwami/"]]},
+ {name:"MARTY’S ICE CREAM",goods:"コースター",links:[["Instagram","https://www.instagram.com/martys_icecream/"]]},
+ {name:"港カフェ「アンカー」",goods:"コースター／キャラクタースプラッシュソーダ",links:[["Instagram","https://www.instagram.com/minatocafe_uradome/"],["X","https://x.com/yourunsentonari"]]},
+ {name:"めん処 日の出丸",goods:"ランチョンマット",links:[["Instagram","https://www.instagram.com/hinodemaru.ramen/"]]},
+ {name:"リベルタ・ラ・クチーナ",goods:"ランチョンマット＋コースター",links:[["Instagram","https://www.instagram.com/libertalacucina/"]]},
+ {name:"龍神荘（コラボカフェ屋台）",goods:"ランチョンマット／実店舗では販売なし",links:[["X","https://x.com/IwamiRyujin"]]},
+ {name:"日替わり弁当 凛々",goods:"ランチョンマット＋コースター",links:[["Instagram","https://www.instagram.com/kenta.riri.1101/"]]},
+ {name:"A lot（アロット）",goods:"コースター",links:[["Instagram","https://www.instagram.com/a.lot_cafe/"]]}
+];
+function renderInventory(){
+ const el=document.getElementById('inventoryList'); if(!el)return;
+ el.innerHTML=inventorySources.map(x=>`<div class="inventory-card"><div class="inventory-head"><div class="inventory-name">${x.name}</div><span class="inventory-status">公式SNS</span></div><div class="inventory-goods">🎁 ${x.goods}</div><div class="inventory-links">${x.links.map(l=>`<a href="${l[1]}" target="_blank" rel="noopener">↗ ${l[0]}を確認</a>`).join('')}</div></div>`).join('');
+}
+
+function refresh(){
+ renderClock();
+ renderTimeline();
+ renderTrains();
+}
+function activateTab(id){
+ document.querySelectorAll("nav button").forEach(x=>x.classList.toggle("active",x.dataset.tab===id));
+ document.querySelectorAll(".panel").forEach(x=>x.classList.toggle("active",x.id===id));
+}
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>activateTab(b.dataset.tab));
+document.getElementById("cafeDetailBack").onclick=closeCafeDetail;
+document.getElementById("cafeDetailModal").addEventListener("click",e=>{if(e.target.id==="cafeDetailModal")closeCafeDetail();});
+document.getElementById("gourmetFesBack").onclick=closeGourmetFes;
+document.getElementById("gourmetFesModal").addEventListener("click",e=>{if(e.target.id==="gourmetFesModal")closeGourmetFes();});
+document.getElementById("cafeHubBack").onclick=closeCafeHub;
+document.getElementById("cafeHubModal").addEventListener("click",e=>{if(e.target.id==="cafeHubModal")closeCafeHub();});
+activateTab("timeline");renderCafes();renderGoods();renderCafeHub();renderInventory();refresh();setInterval(refresh,1000);
+
+document.querySelectorAll('#nav button[data-tab]').forEach(btn=>{
+ btn.addEventListener('click',()=>{
+   requestAnimationFrame(()=>window.scrollTo(0,0));
+ });
+});
+</script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
+</html>
+\n<script>
+setInterval(()=>{
+ renderClock();
+ renderTimeline();
+ renderTrains();
+ updateTrainStates();
+},1000);
+</script>

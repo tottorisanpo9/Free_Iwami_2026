@@ -1,0 +1,107 @@
+{
+  "description": "Free!岩美町2026 当日情報監視用・公式SNS一覧",
+  "sources": [
+    {
+      "name": "Beach Cafe & Outdoor ALOHA",
+      "type": "x",
+      "url": "https://x.com/BeachOutdoor",
+      "priority": 1
+    },
+    {
+      "name": "Beach Cafe & Outdoor ALOHA",
+      "type": "instagram",
+      "url": "https://www.instagram.com/beach.cafe.aloha/",
+      "priority": 1
+    },
+    {
+      "name": "cafe bloom",
+      "type": "x",
+      "url": "https://x.com/cafebloom530",
+      "priority": 1
+    },
+    {
+      "name": "cafe bloom",
+      "type": "instagram",
+      "url": "https://www.instagram.com/cafebloom530/",
+      "priority": 1
+    },
+    {
+      "name": "カフェ HOUOU",
+      "type": "instagram",
+      "url": "https://www.instagram.com/cafe_houou/",
+      "priority": 1
+    },
+    {
+      "name": "MARTY'S ICE CREAM",
+      "type": "instagram",
+      "url": "https://www.instagram.com/martys_icecream/",
+      "priority": 1
+    },
+    {
+      "name": "港カフェ アンカー",
+      "type": "instagram",
+      "url": "https://www.instagram.com/minatocafe_uradome/",
+      "priority": 1
+    },
+    {
+      "name": "港カフェ アンカー",
+      "type": "x",
+      "url": "https://x.com/yourunsentonari",
+      "priority": 1
+    },
+    {
+      "name": "めん処 日の出丸",
+      "type": "instagram",
+      "url": "https://www.instagram.com/hinodemaru.ramen/",
+      "priority": 1
+    },
+    {
+      "name": "リベルタ・ラ・クチーナ",
+      "type": "instagram",
+      "url": "https://www.instagram.com/libertalacucina/",
+      "priority": 1
+    },
+    {
+      "name": "昭和民宿 龍神荘",
+      "type": "x",
+      "url": "https://x.com/IwamiRyujin",
+      "priority": 1
+    },
+    {
+      "name": "日替わり弁当 凛々",
+      "type": "instagram",
+      "url": "https://www.instagram.com/kenta.riri.1101/",
+      "priority": 1
+    },
+    {
+      "name": "A lot",
+      "type": "instagram",
+      "url": "https://www.instagram.com/a.lot_cafe/",
+      "priority": 1
+    },
+    {
+      "name": "村上水産海陽亭 きなんせ岩美店",
+      "type": "instagram",
+      "url": "https://www.instagram.com/kaiyoutei_iwami/",
+      "priority": 1
+    },
+    {
+      "name": "SANTEC サンテック",
+      "type": "x",
+      "url": "https://x.com/santec_k",
+      "priority": 1
+    },
+    {
+      "name": "Free!シリーズ公式",
+      "type": "x",
+      "url": "https://x.com/iwatobi_sc",
+      "priority": 1
+    },
+    {
+      "name": "岩美町観光協会",
+      "type": "x",
+      "url": "https://x.com/iwamikanko",
+      "priority": 1
+    }
+  ]
+}

@@ -116,7 +116,7 @@ footer{padding:20px 14px 40px;color:#7a858d;font-size:10px;line-height:1.6}
 <nav id="nav">
 <button class="active" data-tab="timeline">タイムライン</button>
 <button data-tab="shuttle">🚌 シャトルバスMAP</button>
-<button data-tab="train">列車情報</button>
+<button data-tab="train">公共交通情報</button>
 <button data-tab="inventory">🎁 コラボカフェ在庫チェック</button>
 </nav>
 </div>
@@ -304,11 +304,24 @@ footer{padding:20px 14px 40px;color:#7a858d;font-size:10px;line-height:1.6}
 </section>
 
 <section id="train" class="panel">
-<h2>🚃 10/10・11 列車情報</h2>
+<h2>🚌🚃 公共交通情報</h2>
 <div class="card"><b>行き：鳥取駅 → 岩美方面</b><div class="note">10/10・11に岩美へ向かうときに使いやすい時間帯を中心に、通常列車＋臨時列車を一覧表示します。</div></div>
 <div class="train-legend"><span class="train-key reg">通常列車</span><span class="train-key extra">臨時列車</span></div>
 <div id="trainsOutbound"></div>
 <div class="train-subnote">※臨時列車は情報提供に基づく掲載です。運転日は必ず各列車の表示を確認してください。</div>
+
+<div class="train-section">
+<div class="card"><b>🚌 10/10（土）浦富遊覧方面・行き</b><div class="note">今回の予定に合わせ、浦富遊覧で下車してグッズ購入・ドリンク購入後、次の便で岩美駅へ戻る流れを確認できるよう掲載しています。</div></div>
+<div class="train-legend"><span class="train-key special">バス</span></div>
+<div class="train-card special"><div class="train-time">9:05</div><div class="train-main"><div class="train-type">鳥取駅 → 浦富遊覧</div></div><span class="train-badge">行き</span></div>
+<div class="train-card special"><div class="train-time">9:40</div><div class="train-main"><div class="train-type">鳥取駅 → 浦富遊覧</div></div><span class="train-badge">行き</span></div>
+<div class="train-card special"><div class="train-time">11:10</div><div class="train-main"><div class="train-type">鳥取駅 → 浦富遊覧</div></div><span class="train-badge">行き</span></div>
+<div class="train-card special"><div class="train-time">12:35</div><div class="train-main"><div class="train-type">鳥取駅 → 浦富遊覧</div></div><span class="train-badge">行き</span></div>
+<div class="train-card special"><div class="train-time">10:23</div><div class="train-main"><div class="train-type">浦富遊覧 → 岩美駅</div></div><span class="train-badge">戻り</span></div>
+<div class="train-card special"><div class="train-time">11:53</div><div class="train-main"><div class="train-type">浦富遊覧 → 岩美駅</div></div><span class="train-badge">戻り</span></div>
+<div class="train-card special"><div class="train-time">13:14</div><div class="train-main"><div class="train-type">浦富遊覧 → 岩美駅</div></div><span class="train-badge">戻り</span></div>
+<div class="train-card special"><div class="train-time">14:44</div><div class="train-main"><div class="train-type">浦富遊覧 → 岩美駅</div></div><span class="train-badge">戻り</span></div>
+</div>
 
 <div class="train-section">
 <div class="card"><b>帰り：岩美駅 → 鳥取方面</b><div class="note"><b>THANKS FESは公演17:00〜19:30。</b>イベント終了後に利用できる列車だけを表示します。citeturn0search2</div></div>
@@ -706,7 +719,7 @@ const inventorySources=[
  {name:"村上水産海陽亭 きなんせ岩美店",goods:"ランチョンマット（フード特典）",links:[["Instagram","https://www.instagram.com/kaiyoutei_iwami/"]]},
  {name:"café bloom",goods:"ランチョンマット＋コースター",links:[["X","https://x.com/cafebloom530"],["Instagram","https://www.instagram.com/cafebloom530/"]]},
  {name:"Beach Cafe ALOHA",goods:"ランチョンマット＋コースター",links:[["Instagram","https://www.instagram.com/beach.cafe.aloha/"]]},
- {name:"軽食・喫茶 ふくちゃん",goods:"コースター",links:[["Instagram","https://www.instagram.com/fukuchan_iwami/"]]},
+ {name:"軽食・喫茶 ふくちゃん",goods:"コースター",links:[]},
  {name:"MARTY’S ICE CREAM",goods:"コースター",links:[["Instagram","https://www.instagram.com/martys_icecream/"]]},
  {name:"港カフェ「アンカー」",goods:"コースター／キャラクタースプラッシュソーダ",links:[["Instagram","https://www.instagram.com/minatocafe_uradome/"],["X","https://x.com/yourunsentonari"]]},
  {name:"めん処 日の出丸",goods:"ランチョンマット",links:[["Instagram","https://www.instagram.com/hinodemaru.ramen/"]]},
@@ -736,7 +749,7 @@ document.getElementById("gourmetFesBack").onclick=closeGourmetFes;
 document.getElementById("gourmetFesModal").addEventListener("click",e=>{if(e.target.id==="gourmetFesModal")closeGourmetFes();});
 document.getElementById("cafeHubBack").onclick=closeCafeHub;
 document.getElementById("cafeHubModal").addEventListener("click",e=>{if(e.target.id==="cafeHubModal")closeCafeHub();});
-activateTab("timeline");renderCafes();renderGoods();renderCafeHub();renderInventory();refresh();setInterval(refresh,1000);
+activateTab("timeline");renderCafes();renderGoods();renderCafeHub();renderInventory();initShuttleMap();refresh();setInterval(refresh,1000);
 
 document.querySelectorAll('#nav button[data-tab]').forEach(btn=>{
  btn.addEventListener('click',()=>{

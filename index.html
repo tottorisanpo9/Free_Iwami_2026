@@ -61,7 +61,9 @@ footer{padding:20px 14px 40px;color:#7a858d;font-size:10px;line-height:1.6}
 .novelty-source a{color:var(--blue);text-decoration:underline}
 @media(max-width:520px){.novelty-images{grid-template-columns:1fr 1fr;gap:7px}.novelty-images img{max-height:220px}}
 </style>
-<style id="cafe-ui-v11">.cafe-card{border-radius:12px;padding:14px;margin:10px 0;border:1px solid rgba(0,0,0,.08)}.cafe-card.yatai{background:#fff4ec}.cafe-card.shop{background:#eef7ff}.cafe-label{display:inline-flex;align-items:center;gap:5px;font-weight:700;font-size:.88rem;padding:4px 8px;border-radius:999px;margin-bottom:8px}.cafe-label.yatai{background:#ffe3d0}.cafe-label.shop{background:#dcefff}.cafe-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}.cafe-tag{font-size:.84rem;padding:4px 7px;border-radius:7px;background:rgba(255,255,255,.72)}.inv-dot{display:inline-block;width:10px;height:10px;border-radius:50%;vertical-align:middle;margin-right:5px}.inv-green{background:#249447}.inv-yellow{background:#d39a00}.inv-red{background:#c83d3d}.inv-gray{background:#999}.cafe-meta{font-size:.82rem;line-height:1.6;margin-top:8px}</style><style id="map-btn-v17">.map-btn{display:inline-flex;align-items:center;gap:5px;margin-top:10px;padding:7px 10px;border-radius:8px;text-decoration:none;font-weight:700;background:rgba(255,255,255,.92);border:1px solid rgba(0,0,0,.12);color:inherit}</style><style id="train-ui-v22">
+<style id="cafe-ui-v11">.cafe-card{border-radius:12px;padding:14px;margin:10px 0;border:1px solid rgba(0,0,0,.08)}.cafe-card.yatai{background:#fff4ec}.cafe-card.shop{background:#eef7ff}.cafe-label{display:inline-flex;align-items:center;gap:5px;font-weight:700;font-size:.88rem;padding:4px 8px;border-radius:999px;margin-bottom:8px}.cafe-label.yatai{background:#ffe3d0}.cafe-label.shop{background:#dcefff}.cafe-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}.cafe-tag{font-size:.84rem;padding:4px 7px;border-radius:7px;background:rgba(255,255,255,.72)}.inv-dot{display:inline-block;width:10px;height:10px;border-radius:50%;vertical-align:middle;margin-right:5px}.inv-green{background:#249447}.inv-yellow{background:#d39a00}.inv-red{background:#c83d3d}.inv-gray{background:#999}.cafe-meta{font-size:.82rem;line-height:1.6;margin-top:8px}</style><style id="map-btn-v17">.map-btn{display:inline-flex;align-items:center;gap:5px;margin-top:10px;padding:7px 10px;border-radius:8px;text-decoration:none;font-weight:700;background:rgba(255,255,255,.92);border:1px solid rgba(0,0,0,.12);color:inherit}</style><style id="bus-ui-v1">.bus-times{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:7px}.bus-times span{display:block;text-align:center;font-size:1.05rem;font-weight:900;padding:10px 5px;border:1px solid rgba(22,131,183,.25);border-radius:9px;background:#f7fbfd;color:#12678e}@media(max-width:520px){.bus-times{grid-template-columns:repeat(2,1fr)}}
+</style>
+<style id="train-ui-v22">
 .train-section{margin-top:14px}.train-legend{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}.train-key{font-size:.82rem;padding:4px 8px;border-radius:999px;border:1px solid rgba(0,0,0,.1)}
 .train-key.reg{background:#f4f4f4}.train-key.extra{background:#fff0c7;border-color:#e0b84f}.train-key.special{background:#e7f2ff;border-color:#79a9d8}
 .train-card{display:flex;align-items:center;gap:12px;padding:11px 12px;margin:7px 0;border-radius:10px;border:1px solid rgba(0,0,0,.09);background:#fff}.train-card.extra{background:#fff8df;border-color:#e0b84f}.train-card .train-time{font-size:1.18rem;font-weight:800;min-width:58px}.train-card .train-main{flex:1}.train-card .train-type{font-weight:700}.train-card .train-note{font-size:.8rem;margin-top:3px;opacity:.78}.train-card .train-badge{font-size:.75rem;font-weight:700;padding:4px 7px;border-radius:999px;background:#eee;white-space:nowrap}.train-card.extra .train-badge{background:#f0cf70}.train-subnote{font-size:.78rem;line-height:1.55;margin-top:8px}
@@ -108,6 +110,7 @@ footer{padding:20px 14px 40px;color:#7a858d;font-size:10px;line-height:1.6}
 .cafe-map-marker{cursor:pointer}.cafe-map-marker:hover{filter:drop-shadow(0 2px 5px #0004)}
 .cafe-map-guide{background:#fffaf5;border-color:#f0d7c5}.cafe-map-guide .name{color:#9a4f22}
 .cafe-hub-modal{position:fixed;inset:0;background:#f4f7f8;z-index:1900;display:none;overflow:auto}.cafe-hub-modal.open{display:block}.cafe-hub-head{position:sticky;top:0;z-index:2;background:#fff;border-bottom:1px solid var(--line);padding:10px 12px;display:flex;align-items:center;gap:8px}.cafe-hub-head button{border:0;background:var(--light);border:1px solid #cde4ed;border-radius:9px;padding:8px 11px;font-weight:900;color:var(--blue)}.cafe-hub-body{max-width:760px;margin:auto;padding:12px 12px 36px}.cafe-hub-body .cafe-card{margin:10px 0}.cafe-hub-body .cafe-card .detail-open-btn{width:100%}
+.weather-card{background:linear-gradient(135deg,#f5fbff,#fff);border-color:#bfdce8}.weather-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.weather-day{font-size:18px;font-weight:900;color:var(--blue)}.weather-temp{font-size:20px;font-weight:900}.weather-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-top:10px}.weather-hour{background:#f7fafb;border:1px solid #e2ebef;border-radius:10px;padding:7px 3px;text-align:center;font-size:11px}.weather-hour b{display:block;font-size:13px}.weather-note{font-size:12px;color:#44515a;line-height:1.6}.weather-final{font-size:11px;color:#66727d;margin-top:8px}
 </style>
 </head>
 <body>
@@ -255,7 +258,21 @@ footer{padding:20px 14px 40px;color:#7a858d;font-size:10px;line-height:1.6}
 </section><main>
 <section id="timeline" class="panel active">
 <h2>イベントタイムライン</h2>
+<div class="card weather-card">
+<div class="weather-head"><div><div class="weather-day">🌤 10/10（土）</div><div class="weather-note">岩美町・イベント当日の服装判断用</div></div><div class="weather-temp">最高 28℃ / 最低 16℃</div></div>
+<div class="weather-note" style="margin-top:8px"><b>おおむね晴れ｜降水確率 0%｜北東の風 3m/s</b></div>
+<div class="weather-grid">
+<div class="weather-hour"><b>9:00</b>晴れ<br>23℃</div><div class="weather-hour"><b>12:00</b>晴れ<br>27℃</div><div class="weather-hour"><b>15:00</b>晴れ<br>26℃</div><div class="weather-hour"><b>18:00</b>晴れ<br>22℃</div><div class="weather-hour"><b>21:00</b>晴れ<br>19℃</div>
+</div><div class="weather-note" style="margin-top:10px"><b>服装：</b>薄手の長袖＋脱ぎ着できる軽い羽織りがおすすめ。昼は28℃近くまで上がるため厚着は不要。朝16℃・夜19℃前後は羽織りがあると安心。海沿いでは北東風で少し涼しく感じる可能性あり。</div>
+<div class="weather-final">湿度は10/7最終確認時に岩美町ピンポイント予報で更新予定。現時点では未確定値を掲載しません。</div>
 
+<div class="weather-head" style="margin-top:16px"><div><div class="weather-day">☀️ 10/11（日）</div><div class="weather-note">岩美町・イベント当日の服装判断用</div></div><div class="weather-temp">最高 27℃ / 最低 16℃</div></div>
+<div class="weather-note" style="margin-top:8px"><b>晴れ｜降水確率 0%｜北東の風 3m/s</b></div>
+<div class="weather-grid">
+<div class="weather-hour"><b>9:00</b>晴れ<br>23℃</div><div class="weather-hour"><b>12:00</b>晴れ<br>27℃</div><div class="weather-hour"><b>15:00</b>晴れ<br>25℃</div><div class="weather-hour"><b>18:00</b>晴れ<br>22℃</div><div class="weather-hour"><b>21:00</b>晴れ<br>20℃</div>
+</div><div class="weather-note" style="margin-top:10px"><b>服装：</b>10/10と同じく、薄手の長袖＋軽い羽織りが扱いやすそう。昼は暖かく、夕方以降は羽織りがあると安心。</div>
+<div class="weather-final">湿度は10/7最終確認時に岩美町ピンポイント予報で更新予定。現時点では未確定値を掲載しません。</div>
+</div>
 <div id="timelineList"></div>
 </section>
 
@@ -293,7 +310,7 @@ footer{padding:20px 14px 40px;color:#7a858d;font-size:10px;line-height:1.6}
 <div class="latest-info-item"><b>🛍 SANTEC</b><br>直近の公式Xで岩美町オリジナルグッズの最新ラインナップを公開。販売開始は10/10。さらに「SPLASH FREE」シリーズは<b>10/10〜10/17にサンテックでも販売予定</b>と公式案内されています。</div>
 </div>
 </div>
-<div class="warning">一覧は店舗を探しやすくするため簡潔にし、メニュー名・画像・価格などは「メニュー・詳細を見る」にまとめています。価格未公表のものは推測せず「価格未公表」としています。</div>
+<div class="warning">一覧は店舗を探しやすくするため簡潔にし、メニュー名・画像・価格などは「メニュー・詳細を見る」にまとめています。価格未公表のものは推測せず、10/7最終確認で公式発表が見つかった場合のみ更新します。</div>
 <div id="cafeList"></div>
 </section>
 
@@ -304,27 +321,26 @@ footer{padding:20px 14px 40px;color:#7a858d;font-size:10px;line-height:1.6}
 </section>
 
 <section id="train" class="panel">
-<h2>🚌🚃 公共交通情報</h2>
+<h2>🚌🚃 10/10・11 公共交通情報</h2>
+<div class="card">
+<div class="name">🚌 10/10（土）あなたの行きルート</div>
+<div class="note">浦富遊覧でグッズ・港カフェを利用してから、岩美駅へ向かう流れです。</div>
+<div class="section" style="margin-top:12px">鳥取駅 → 浦富遊覧</div>
+<div class="train-legend"><span class="train-key special">行き</span></div>
+<div class="bus-times"><span>09:05</span><span>09:40</span><span>11:10</span><span>12:35</span></div>
+<div class="section" style="margin-top:14px">浦富遊覧 → 岩美駅</div>
+<div class="train-legend"><span class="train-key special">次の区間</span></div>
+<div class="bus-times"><span>10:23</span><span>11:53</span><span>13:14</span><span>14:44</span></div>
+<div class="weather-final">※「浦富遊覧 → 岩美駅」は帰り便ではありません。浦富遊覧でグッズ・港カフェを利用した後に岩美駅へ移動する次の区間です。</div>
+</div>
+<h2>🚃 10/10・11 列車情報</h2>
 <div class="card"><b>行き：鳥取駅 → 岩美方面</b><div class="note">10/10・11に岩美へ向かうときに使いやすい時間帯を中心に、通常列車＋臨時列車を一覧表示します。</div></div>
 <div class="train-legend"><span class="train-key reg">通常列車</span><span class="train-key extra">臨時列車</span></div>
 <div id="trainsOutbound"></div>
 <div class="train-subnote">※臨時列車は情報提供に基づく掲載です。運転日は必ず各列車の表示を確認してください。</div>
 
 <div class="train-section">
-<div class="card"><b>🚌 10/10（土）浦富遊覧方面・行き</b><div class="note">今回の予定に合わせ、浦富遊覧で下車してグッズ購入・ドリンク購入後、次の便で岩美駅へ戻る流れを確認できるよう掲載しています。</div></div>
-<div class="train-legend"><span class="train-key special">バス</span></div>
-<div class="train-card special"><div class="train-time">9:05</div><div class="train-main"><div class="train-type">鳥取駅 → 浦富遊覧</div></div><span class="train-badge">行き</span></div>
-<div class="train-card special"><div class="train-time">9:40</div><div class="train-main"><div class="train-type">鳥取駅 → 浦富遊覧</div></div><span class="train-badge">行き</span></div>
-<div class="train-card special"><div class="train-time">11:10</div><div class="train-main"><div class="train-type">鳥取駅 → 浦富遊覧</div></div><span class="train-badge">行き</span></div>
-<div class="train-card special"><div class="train-time">12:35</div><div class="train-main"><div class="train-type">鳥取駅 → 浦富遊覧</div></div><span class="train-badge">行き</span></div>
-<div class="train-card special"><div class="train-time">10:23</div><div class="train-main"><div class="train-type">浦富遊覧 → 岩美駅</div></div><span class="train-badge">戻り</span></div>
-<div class="train-card special"><div class="train-time">11:53</div><div class="train-main"><div class="train-type">浦富遊覧 → 岩美駅</div></div><span class="train-badge">戻り</span></div>
-<div class="train-card special"><div class="train-time">13:14</div><div class="train-main"><div class="train-type">浦富遊覧 → 岩美駅</div></div><span class="train-badge">戻り</span></div>
-<div class="train-card special"><div class="train-time">14:44</div><div class="train-main"><div class="train-type">浦富遊覧 → 岩美駅</div></div><span class="train-badge">戻り</span></div>
-</div>
-
-<div class="train-section">
-<div class="card"><b>帰り：岩美駅 → 鳥取方面</b><div class="note"><b>THANKS FESは公演17:00〜19:30。</b>イベント終了後に利用できる列車だけを表示します。citeturn0search2</div></div>
+<div class="card"><b>帰り：岩美駅 → 鳥取方面</b><div class="note"><b>THANKS FESは公演17:00〜19:30。</b>イベント終了後に利用できる列車だけを表示します。</div></div>
 <div class="train-legend"><span class="train-key reg">通常列車</span><span class="train-key extra">臨時列車</span></div>
 <div id="trainsInbound"></div>
 <div class="train-subnote">※臨時列車の情報：10/10のみ「東浜20:32発→鳥取」「東浜21:55発→鳥取」、10/10・11「鳥取8:43発→東浜」、10/10のみ「鳥取11:18発→東浜」。臨時列車はJR西日本で最終確認後に更新します。</div>
@@ -627,7 +643,7 @@ const cafeDetails={
  "MARTY’S ICE CREAM":{image:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/10/1.png",images:[
   {url:"https://pic.x.com/z8xoHnPfMn",label:"4種のコラボメニュー紹介",source:"マーティーズアイスクリーム＆デザインイナバノ 公式X",link:"https://x.com/designinabano",fallback:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/10/1.png"}
 ],items:["🐬 岩鳶おかえりサンデー（ラムネ／バニラ）　850円","🦈 YES‼鮫柄水泳サンデー（カシス／バニラ）　850円","🐬 岩鳶BLUEミルクプリン（ライチ＋グレープフルーツの青いゼリー／わらび餅／パンナコッタ）　800円","🦈 鮫柄REDミルクプリン（カシス＋烏龍茶ゼリー／mixベリー／杏仁豆腐）　800円"],note:"2部制の整理券。持帰りのみ。コースターは数量限定。店舗公式Xでアレルゲン情報も公開されています。",source:"岩美町観光協会公式ページ・MARTY’S ICE CREAM 公式X"},
- "港カフェ「アンカー」":{image:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/11/1.jpg",images:[{url:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/11/1.jpg",label:"コラボドリンク掲載画像",source:"岩美町観光協会公式ページ",link:"https://www.iwamikanko.org/free-iwami2026/collabocafe/"}],items:["全8品：キャラクタースプラッシュソーダ各種（価格未公表）"],note:"予約不要・先着順。10/10は10:00〜15:00（LO14:30）、10/11・12は9:00〜15:30（LO15:00）。公式Instagramにも実物のコラボドリンク写真が掲載されています。",source:"岩美町観光協会公式ページ・港カフェ公式X / Instagram",socialLinks:[['📷 公式Instagram・最新ドリンク写真','https://www.instagram.com/minatocafe_uradome/'],['公式X','https://x.com/yourunsentonari']]},
+ "港カフェ「アンカー」":{image:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/11/1.jpg",images:[{url:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/11/1.jpg",label:"コラボドリンク掲載画像",source:"岩美町観光協会公式ページ",link:"https://www.iwamikanko.org/free-iwami2026/collabocafe/"}],items:["全8品：キャラクタースプラッシュソーダ各種（価格は10/7最終確認で再確認）"],note:"予約不要・先着順。10/10は10:00〜15:00（LO14:30）、10/11・12は9:00〜15:30（LO15:00）。公式Instagramにも実物のコラボドリンク写真が掲載されています。",source:"岩美町観光協会公式ページ・港カフェ公式X / Instagram",socialLinks:[['📷 公式Instagram・最新ドリンク写真','https://www.instagram.com/minatocafe_uradome/'],['公式X','https://x.com/yourunsentonari']]},
  "めん処 日の出丸":{image:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/12/1.jpg",items:["旨辛担々麺（価格未公表）"],note:"全1品。10/10は屋台村、10/11・12は実店舗。ランチョンマット対象。",source:"岩美町観光協会公式ページ・公式掲載画像"},
  "リベルタ・ラ・クチーナ":{image:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/14/1.jpg",items:["全10品：サバサンド／キャラクターゼリー各種（価格未公表）"],note:"10/10・11限定。8:00から列形成。10/12は通常営業でコラボ提供なし。",source:"岩美町観光協会公式ページ・公式掲載画像"},
  "龍神荘":{image:"https://www.iwamikanko.org/free-iwami2026/collabocafe/img/15/1.jpg",images:[
@@ -749,7 +765,7 @@ document.getElementById("gourmetFesBack").onclick=closeGourmetFes;
 document.getElementById("gourmetFesModal").addEventListener("click",e=>{if(e.target.id==="gourmetFesModal")closeGourmetFes();});
 document.getElementById("cafeHubBack").onclick=closeCafeHub;
 document.getElementById("cafeHubModal").addEventListener("click",e=>{if(e.target.id==="cafeHubModal")closeCafeHub();});
-activateTab("timeline");renderCafes();renderGoods();renderCafeHub();renderInventory();initShuttleMap();refresh();setInterval(refresh,1000);
+activateTab("timeline");initShuttleMap();renderCafes();renderGoods();renderCafeHub();renderInventory();refresh();setInterval(refresh,1000);
 
 document.querySelectorAll('#nav button[data-tab]').forEach(btn=>{
  btn.addEventListener('click',()=>{
